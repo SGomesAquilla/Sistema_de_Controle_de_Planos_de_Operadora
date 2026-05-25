@@ -1,7 +1,6 @@
-import { Plano } from '../../domain/entities/Plano';
+import { Cliente } from '../../domain/entities/Cliente';
 
-export interface IPlanoRepository {
-    findAll(): Promise<Plano[]>;
-    findById(codigo: number): Promise<Plano | null>;
-    updateCustoMensal(codigo: number, novoCusto: number): Promise<Plano>;
+export interface IClienteRepository {
+    findAll(): Promise<Cliente[]>;
+    findById(codigo: number): Promise<Cliente | null>;
 }
