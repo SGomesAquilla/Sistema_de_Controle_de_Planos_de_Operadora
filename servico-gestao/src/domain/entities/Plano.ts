@@ -15,7 +15,7 @@ export class Plano {
         this.validar();
     }
 
-    atualizarCustor(novoCusto: number): void {
+    atualizarCusto(novoCusto: number): void {
         this.custoMensal = new CustoMensal(novoCusto);
     }
 
