@@ -1,7 +1,5 @@
 # 📡 Sistema Distribuído de Gestão de Planos e Assinaturas (Telecom)
 
-Este repositório contém a solução completa para um ecossistema backend voltado ao gerenciamento integrado de planos e assinaturas para operadoras de internet. O projeto foi concebido e evoluído em duas fases, transitando de um serviço principal monolítico altamente estruturado para um ecossistema distribuído baseado em microsserviços de alta performance.
-
 ---
 
 ## 🛠️ Tecnologias e Ferramentas Utilizadas
