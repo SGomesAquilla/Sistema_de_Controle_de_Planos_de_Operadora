@@ -1,7 +1,9 @@
 export interface AssinaturaResponseDTO {
-  codigo: number;
-  codPlano: number;
-  codCliente: number;
+  codigo: bigint;
+  codCli: bigint;
+  codPlano: bigint;
+  custoFinal: number,
+  descricao: string,
   inicioFidelidade: Date;
   fimFidelidade: Date;
   dataUltimoPagamento: Date;

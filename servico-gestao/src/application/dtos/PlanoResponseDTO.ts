@@ -1,7 +1,7 @@
 export interface PlanoResponseDTO {
-  codigo: number;
+  codigo: bigint;
   nome: string;
   custoMensal: number;
   descricao: string;
-  dataCriacao: Date;
+  data: Date;
 }

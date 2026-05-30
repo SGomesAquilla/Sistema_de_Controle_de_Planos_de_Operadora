@@ -1,5 +1,6 @@
 export interface CriarAssinaturaDTO {
-  codCliente: number;
-  codPlano: number;
-  dataContratacao?: Date;
+  codCli: bigint;
+  codPlano: bigint;
+  custoFinal: number,
+  descricao: string,
 }

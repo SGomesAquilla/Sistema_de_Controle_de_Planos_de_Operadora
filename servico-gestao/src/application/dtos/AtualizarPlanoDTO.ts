@@ -1,4 +1,4 @@
 export interface AtualizarPlanoDTO {
-  codigo: number;
+  codigo: bigint;
   custoMensal: number;
 }

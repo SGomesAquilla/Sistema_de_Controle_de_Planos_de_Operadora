@@ -1,5 +1,5 @@
 export interface ClienteResponseDTO {
-  codigo: number;
+  codigo: bigint;
   nome: string;
   email: string;
 }
