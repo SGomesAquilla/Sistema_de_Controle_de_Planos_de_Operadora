@@ -2,7 +2,7 @@ import { ClienteInvalidoError } from '../../shared/errors/ClienteErrors';
 
 export class Cliente {
     constructor(
-        public readonly codigo: number,
+        public readonly codigo: bigint,
         public readonly nome: string,
         public readonly email: string
     ) {
