@@ -5,18 +5,19 @@ export class Plano {
     public custoMensal: CustoMensal;
 
     constructor(
-        public readonly codigo: number,
+        public readonly codigo: bigint,
         public nome: string,
         custoMensal: number,
-        public readonly data: Date,
+        public data: Date,
         public readonly descricao: string
     ) {
         this.custoMensal = new CustoMensal(custoMensal);
         this.validar();
     }
 
-    atualizarCusto(novoCusto: number): void {
+    atualizarCusto(novoCusto: number, dataAtualizacao: Date = new Date()): void {
         this.custoMensal = new CustoMensal(novoCusto);
+        this.data = dataAtualizacao;
     }
 
     private validar(): void {
