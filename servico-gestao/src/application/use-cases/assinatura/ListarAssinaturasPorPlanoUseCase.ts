@@ -9,7 +9,7 @@ export class ListarAssinaturasPorPlanoUseCase {
         private readonly planoRepository: IPlanoRepository,
     ) {}
 
-    async execute(codPlano: number): Promise<AssinaturaResponseDTO[]> {
+    async execute(codPlano: bigint): Promise<AssinaturaResponseDTO[]> {
         const plano = await this.planoRepository.findById(codPlano);
         if (!plano) { throw new PlanoNaoEncontradoError(codPlano); }
 
@@ -19,9 +19,11 @@ export class ListarAssinaturasPorPlanoUseCase {
         return assinaturas.map((assinatura) => ({
             codigo: assinatura.codigo,
             codPlano: assinatura.codPlano,
-            codCliente: assinatura.codCliente,
-            inicioFidelidade: assinatura.periodo.inicio,
-            fimFidelidade: assinatura.periodo.fim,
+            codCli: assinatura.codCli,
+            custoFinal: assinatura.custoFinal,
+            descricao: assinatura.descricao,
+            inicioFidelidade: assinatura.inicioFidelidade,
+            fimFidelidade: assinatura.fimFidelidade,
             dataUltimoPagamento: assinatura.dataUltimoPagamento,
             status: assinatura.obterStatus(agora),
             emFidelidade: assinatura.estaEmFidelidade(agora),

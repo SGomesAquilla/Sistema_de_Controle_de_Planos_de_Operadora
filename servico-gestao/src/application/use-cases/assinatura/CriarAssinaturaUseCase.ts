@@ -2,7 +2,7 @@ import { IAssinaturaRepository } from '../../ports/IAssinaturaRepository';
 import { IClienteRepository } from '../../ports/IClienteRepository';
 import { IPlanoRepository } from '../../ports/IPlanoRepository';
 import { IEventPublisher } from '../../ports/IEventPublisher';
-import { CriarAssinaturaDTO } from '../../dtos/CriarAassinaturaDTO';
+import { CriarAssinaturaDTO } from '../../dtos/CriarAssinaturaDTO';
 import { AssinaturaResponseDTO } from '../../dtos/AssinaturaResponseDTO';
 import { Assinatura } from '../../../domain/entities/Assinatura';
 import { ClienteNaoEncontradoError } from '../../../shared/errors/ClienteErrors';
@@ -17,19 +17,21 @@ export class CriarAssinaturaUseCase {
     ) {}
 
     async execute(dto: CriarAssinaturaDTO): Promise<AssinaturaResponseDTO> {
-        const cliente = await this.clienteRepository.findById(dto.codCliente);
-        if (!cliente) { throw new ClienteNaoEncontradoError(dto.codCliente); }
+        const cliente = await this.clienteRepository.findById(dto.codCli);
+        if (!cliente) { throw new ClienteNaoEncontradoError(dto.codCli); }
 
         const plano = await this.planoRepository.findById(dto.codPlano);
         if (!plano) { throw new PlanoNaoEncontradoError(dto.codPlano); }
 
-        const dataContratacao = dto.dataContratacao ?? new Date();
+        const dataContratacao = new Date();
 
         const assinatura = Assinatura.criar(
-            0,
+            0n,
             dto.codPlano,
-            dto.codCliente,
+            dto.codCli,
             dataContratacao,
+            dto.custoFinal,
+            dto.descricao,
         );
 
         const assinaturaSalva = await this.assinaturaRepository.save(assinatura);
@@ -39,7 +41,7 @@ export class CriarAssinaturaUseCase {
             occurredAt: new Date(),
             payload: {
                 codAssinatura: assinaturaSalva.codigo,
-                codCliente: assinaturaSalva.codCliente,
+                codCli: assinaturaSalva.codCli,
                 codPlano: assinaturaSalva.codPlano,
             },
         });
@@ -52,9 +54,11 @@ export class CriarAssinaturaUseCase {
         return {
         codigo: assinatura.codigo,
         codPlano: assinatura.codPlano,
-        codCliente: assinatura.codCliente,
-        inicioFidelidade: assinatura.periodo.inicio,
-        fimFidelidade: assinatura.periodo.fim,
+        codCli: assinatura.codCli,
+        custoFinal: assinatura.custoFinal,
+        descricao: assinatura.descricao,
+        inicioFidelidade: assinatura.inicioFidelidade,
+        fimFidelidade: assinatura.fimFidelidade,
         dataUltimoPagamento: assinatura.dataUltimoPagamento,
         status: assinatura.obterStatus(agora),
         emFidelidade: assinatura.estaEmFidelidade(agora),

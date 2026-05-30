@@ -2,7 +2,6 @@ import { IAssinaturaRepository } from '../../ports/IAssinaturaRepository';
 import { AssinaturaResponseDTO } from '../../dtos/AssinaturaResponseDTO';
 import { IClienteRepository } from '../../ports/IClienteRepository';
 import { ClienteNaoEncontradoError } from '../../../shared/errors/ClienteErrors';
-import { Cliente } from 'src/domain/entities/Cliente';
 
 export class ListarAssinaturasPorClienteUseCase {
     constructor(
@@ -10,19 +9,21 @@ export class ListarAssinaturasPorClienteUseCase {
         private readonly clienteRepository: IClienteRepository,
     ) {}
 
-    async execute(codCliente: number): Promise<AssinaturaResponseDTO[]> {
-        const cliente = await this.clienteRepository.findById(codCliente);
-        if (!cliente) { throw new ClienteNaoEncontradoError(codCliente) };
+    async execute(codCli: bigint): Promise<AssinaturaResponseDTO[]> {
+        const cliente = await this.clienteRepository.findById(codCli);
+        if (!cliente) { throw new ClienteNaoEncontradoError(codCli) };
 
-        const assinaturas = await this.assinaturaRepository.findByCliente(codCliente);
+        const assinaturas = await this.assinaturaRepository.findByCliente(codCli);
         const agora = new Date();
 
         return assinaturas.map((assinatura) => ({
             codigo: assinatura.codigo,
             codPlano: assinatura.codPlano,
-            codCliente: assinatura.codCliente,
-            inicioFidelidade: assinatura.periodo.inicio,
-            fimFidelidade: assinatura.periodo.fim,
+            codCli: assinatura.codCli,
+            custoFinal: assinatura.custoFinal,
+            descricao: assinatura.descricao,
+            inicioFidelidade: assinatura.inicioFidelidade,
+            fimFidelidade: assinatura.fimFidelidade,
             dataUltimoPagamento: assinatura.dataUltimoPagamento,
             status: assinatura.obterStatus(agora),
             emFidelidade: assinatura.estaEmFidelidade(agora),

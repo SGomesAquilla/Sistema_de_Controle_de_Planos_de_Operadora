@@ -25,7 +25,7 @@ export class AtualizarCustoPlanoUseCase {
             nome: planoAtualizado.nome,
             custoMensal: planoAtualizado.custoMensal.valor,
             descricao: planoAtualizado.descricao,
-            dataCriacao: planoAtualizado.data,
+            data: planoAtualizado.data,
         };
     }
 }

@@ -12,7 +12,7 @@ export class ListarPlanosUseCase {
             nome: plano.nome,
             custoMensal: plano.custoMensal.valor,
             descricao: plano.descricao,
-            dataCriacao: plano.data,
+            data: plano.data,
         }));
     }
 }
