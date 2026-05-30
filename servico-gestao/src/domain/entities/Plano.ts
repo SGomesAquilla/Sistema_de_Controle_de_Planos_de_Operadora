@@ -15,9 +15,9 @@ export class Plano {
         this.validar();
     }
 
-    atualizarCusto(novoCusto: number, dataAtualizacao: Date = new Date()): void {
+    atualizarCusto(novoCusto: number): void {
         this.custoMensal = new CustoMensal(novoCusto);
-        this.data = dataAtualizacao;
+        this.data = new Date();
     }
 
     private validar(): void {
