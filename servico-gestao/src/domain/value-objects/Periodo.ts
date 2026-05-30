@@ -1,36 +1,56 @@
 import { PeriodoInvalidoError } from '../../shared/errors/ValueObjectsErrors';
 
 export class Periodo {
-  public readonly inicio: Date;
-  public readonly fim: Date;
+  private static readonly DIAS_FIDELIDADE_PADRAO = 365;
 
-  private static readonly DIAS_FIDELIDADE = 365;
-
-  constructor(inicio: Date, fim: Date) {
+  constructor(
+    public readonly inicio: Date,
+    public readonly fim: Date,
+  ) {
     if (!inicio || !fim) {
-      throw new PeriodoInvalidoError('datas de início e fim são obrigatórias');
+      throw new PeriodoInvalidoError(
+        'datas de início e fim são obrigatórias',
+      );
     }
+
     if (fim <= inicio) {
-      throw new PeriodoInvalidoError('data fim deve ser posterior à data início');
+      throw new PeriodoInvalidoError(
+        'data fim deve ser posterior à data início',
+      );
     }
-    this.inicio = inicio;
-    this.fim = fim;
   }
 
-  static criarComFidelidade(dataContratacao: Date): Periodo {
+  static criarComFidelidadePadrao(
+    dataContratacao: Date,
+  ): Periodo {
     const fim = new Date(dataContratacao);
-    fim.setDate(fim.getDate() + Periodo.DIAS_FIDELIDADE);
-    return new Periodo(dataContratacao, fim);
+
+    fim.setDate(
+      fim.getDate() +
+        Periodo.DIAS_FIDELIDADE_PADRAO,
+    );
+
+    return new Periodo(
+      dataContratacao,
+      fim,
+    );
   }
 
-  estaEmFidelidade(dataReferencia: Date): boolean {
-    return dataReferencia <= this.fim;
+  contem(
+    dataReferencia: Date,
+  ): boolean {
+    return (
+      dataReferencia >= this.inicio &&
+      dataReferencia <= this.fim
+    );
   }
 
   equals(outro: Periodo): boolean {
     return (
-      this.inicio.getTime() === outro.inicio.getTime() &&
-      this.fim.getTime() === outro.fim.getTime()
+      this.inicio.getTime() ===
+        outro.inicio.getTime() &&
+      this.fim.getTime() ===
+        outro.fim.getTime()
     );
   }
 }

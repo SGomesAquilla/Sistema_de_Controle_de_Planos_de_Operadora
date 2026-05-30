@@ -7,67 +7,118 @@ export enum StatusAssinatura {
 }
 
 export class Assinatura {
-  public readonly periodo: Periodo;
-  private static readonly DIAS_TOLERANCIA_PAGAMENTO = 30;
+  private static readonly DIAS_VALIDADE_PAGAMENTO = 30;
 
   private constructor(
-    public readonly codigo: number,
-    public readonly codPlano: number,
-    public readonly codCliente: number,
+    public readonly codigo: bigint,
+    public readonly codPlano: bigint,
+    public readonly codCli: bigint,
+    private periodoFidelidade: Periodo,
     public dataUltimoPagamento: Date,
-    periodo: Periodo,
-  ) {
-    this.periodo = periodo;
-  }
+    public readonly custoFinal: number,
+    public readonly descricao: string,
+  ) {}
 
-  // --- Factory Method ---
   static criar(
-    codigo: number,
-    codPlano: number,
-    codCliente: number,
+    codigo: bigint,
+    codPlano: bigint,
+    codCli: bigint,
     dataContratacao: Date,
+    custoFinal: number,
+    descricao: string,
   ): Assinatura {
-    if (!codPlano || codPlano <= 0)
-      throw new AssinaturaInvalidaError('código do plano inválido');
-    if (!codCliente || codCliente <= 0)
-      throw new AssinaturaInvalidaError('código do cliente inválido');
+    if (codPlano <= 0n) {
+      throw new AssinaturaInvalidaError(
+        'código do plano inválido',
+      );
+    }
 
-    const periodo = Periodo.criarComFidelidade(dataContratacao);
+    if (codCli <= 0n) {
+      throw new AssinaturaInvalidaError(
+        'código do cliente inválido',
+      );
+    }
+
+    if (custoFinal < 0) {
+      throw new AssinaturaInvalidaError(
+        'custo final inválido',
+      );
+    }
+
+    const periodoFidelidade =
+      Periodo.criarComFidelidadePadrao(
+        dataContratacao,
+      );
 
     return new Assinatura(
       codigo,
       codPlano,
-      codCliente,
-      dataContratacao, // primeiro "pagamento" é a contratação
-      periodo,
+      codCli,
+      periodoFidelidade,
+      dataContratacao,
+      custoFinal,
+      descricao,
     );
   }
 
-  // --- Regra de negócio: status ativo ---
-  estaAtiva(dataReferencia: Date = new Date()): boolean {
-    const limite = new Date(this.dataUltimoPagamento);
-    limite.setDate(limite.getDate() + Assinatura.DIAS_TOLERANCIA_PAGAMENTO);
-    return dataReferencia <= limite;
+  get inicioFidelidade(): Date {
+    return this.periodoFidelidade.inicio;
   }
 
-  // --- Regra de negócio: status formatado ---
-  obterStatus(dataReferencia: Date = new Date()): StatusAssinatura {
+  get fimFidelidade(): Date {
+    return this.periodoFidelidade.fim;
+  }
+
+  estaAtiva(
+    dataReferencia: Date = new Date(),
+  ): boolean {
+    const validadePagamento =
+      new Date(this.dataUltimoPagamento);
+
+    validadePagamento.setDate(
+      validadePagamento.getDate() +
+        Assinatura.DIAS_VALIDADE_PAGAMENTO,
+    );
+
+    return dataReferencia <= validadePagamento;
+  }
+
+  obterStatus(
+    dataReferencia: Date = new Date(),
+  ): StatusAssinatura {
     return this.estaAtiva(dataReferencia)
       ? StatusAssinatura.ATIVO
       : StatusAssinatura.CANCELADO;
   }
 
-  // --- Regra de negócio: fidelidade ---
-  estaEmFidelidade(dataReferencia: Date = new Date()): boolean {
-    return this.periodo.estaEmFidelidade(dataReferencia);
+  estaEmFidelidade(
+    dataReferencia: Date = new Date(),
+  ): boolean {
+    return this.periodoFidelidade.contem(
+      dataReferencia,
+    );
   }
 
-  // --- Ação de domínio: registrar pagamento ---
-  registrarPagamento(dataPagamento: Date = new Date()): void {
-    if (dataPagamento < this.dataUltimoPagamento)
+  registrarPagamento(
+    dataPagamento: Date,
+  ): void {
+    if (
+      dataPagamento <
+      this.dataUltimoPagamento
+    ) {
       throw new AssinaturaInvalidaError(
         'data de pagamento não pode ser anterior ao último pagamento registrado',
       );
-    this.dataUltimoPagamento = dataPagamento;
+    }
+
+    this.dataUltimoPagamento =
+      dataPagamento;
+  }
+
+  alterarPeriodoFidelidade(
+    novoPeriodo: Periodo,
+  ): void {
+    this.periodoFidelidade =
+      novoPeriodo;
   }
 }
