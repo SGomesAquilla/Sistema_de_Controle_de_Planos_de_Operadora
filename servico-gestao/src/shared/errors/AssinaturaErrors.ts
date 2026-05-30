@@ -7,7 +7,7 @@ export class AssinaturaInvalidaError extends DomainError {
 }
 
 export class AssinaturaNaoEncontradaError extends DomainError {
-  constructor(codigo: number) {
+  constructor(codigo: bigint) {
     super(`Assinatura não encontrada: ${codigo}`);
   }
 }

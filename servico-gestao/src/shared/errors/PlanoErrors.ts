@@ -7,7 +7,7 @@ export class PlanoInvalidoError extends DomainError {
 }
 
 export class PlanoNaoEncontradoError extends DomainError {
-  constructor(codigo: number) {
+  constructor(codigo: bigint) {
     super(`Plano não encontrado: ${codigo}`);
   }
 }

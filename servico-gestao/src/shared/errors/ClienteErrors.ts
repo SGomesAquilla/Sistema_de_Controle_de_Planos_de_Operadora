@@ -7,7 +7,7 @@ export class ClienteInvalidoError extends DomainError {
 }
 
 export class ClienteNaoEncontradoError extends DomainError {
-  constructor(codigo: number) {
+  constructor(codigo: bigint) {
     super(`Cliente não encontrado: ${codigo}`);
   }
 }
