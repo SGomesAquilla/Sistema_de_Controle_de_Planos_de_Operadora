@@ -15,5 +15,5 @@ export class CustoMensal {
 
     equals(outro: CustoMensal): boolean {
         return this.valor === outro.valor;
-  }
+    }
 }
