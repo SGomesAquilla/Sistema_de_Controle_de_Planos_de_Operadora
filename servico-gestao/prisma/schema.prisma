@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Cliente {
+  codigo      BigInt       @id @default(autoincrement())
+  nome        String
+  email       String       @unique
+  assinaturas Assinatura[]
+}
+
+model Plano {
+  codigo      BigInt       @id @default(autoincrement())
+  nome        String
+  custoMensal Float
+  descricao   String
+  data        DateTime     @default(now())
+  assinaturas Assinatura[]
+}
+
+model Assinatura {
+  codigo              BigInt   @id @default(autoincrement())
+  codPlano            BigInt
+  codCli              BigInt
+  inicioFidelidade    DateTime
+  fimFidelidade       DateTime
+  dataUltimoPagamento DateTime
+  custoFinal          Float
+  descricao           String
+
+  plano   Plano   @relation(fields: [codPlano], references: [codigo])
+  cliente Cliente @relation(fields: [codCli], references: [codigo])
+}

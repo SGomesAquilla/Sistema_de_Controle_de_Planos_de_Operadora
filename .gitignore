@@ -1,9 +1,14 @@
-# compiled output
-/dist
-/node_modules
-/build
+# ==========================================
+# Compilação e Dependências (Modo Monorepo)
+# ==========================================
+# Sem a barra inicial (/), ignora em qualquer nível/microsserviço
+node_modules/
+dist/
+build/
 
-# Logs
+# ==========================================
+# Logs e Relatórios
+# ==========================================
 logs
 *.log
 npm-debug.log*
@@ -12,15 +17,23 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-# OS
+# ==========================================
+# Sistemas Operacionais
+# ==========================================
 .DS_Store
+Thumbs.db
 
-# Tests
-/coverage
-/.nyc_output
+# ==========================================
+# Testes e Cobertura
+# ==========================================
+# Removida a barra inicial para ignorar testes de todos os microsserviços
+coverage/
+.nyc_output/
 
-# IDEs and editors
-/.idea
+# ==========================================
+# IDEs, Editores e Ferramentas
+# ==========================================
+.idea/
 .project
 .classpath
 .c9/
@@ -28,25 +41,29 @@ lerna-debug.log*
 .settings/
 *.sublime-workspace
 
-# IDE - VSCode
+# IDE - VSCode (Mantém configurações compartilhadas do time)
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# dotenv environment variable files
+# ==========================================
+# Variáveis de Ambiente (Segurança)
+# ==========================================
+# Ignora arquivos .env na raiz ou dentro de qualquer microsserviço
 .env
+.env.local
 .env.development.local
 .env.test.local
 .env.production.local
-.env.local
+*.env
 
-# temp directory
-.temp
-.tmp
-
-# Runtime data
+# ==========================================
+# Pastas Temporárias e Runtime
+# ==========================================
+.temp/
+.tmp/
 pids
 *.pid
 *.seed
@@ -54,3 +71,9 @@ pids
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# ==========================================
+# Prisma ORM
+# ==========================================
+# Ignora artefatos gerados pelo Prisma em qualquer microsserviço
+generated/prisma/
