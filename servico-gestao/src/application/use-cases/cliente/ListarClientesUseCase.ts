@@ -1,7 +1,7 @@
 import { IClienteRepository } from '../../ports/IClienteRepository';
 import { ClienteResponseDTO } from '../../dtos/ClienteResponseDTO';
 
-export class ListaClientesUseCase {
+export class ListarClientesUseCase {
     constructor(private readonly clienteRepository: IClienteRepository) {}
 
     async execute(): Promise<ClienteResponseDTO[]> {
