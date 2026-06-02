@@ -19,6 +19,14 @@ export class Assinatura {
     public readonly descricao: string,
   ) {}
 
+  get inicioFidelidade(): Date {
+    return this.periodoFidelidade.inicio;
+  }
+
+  get fimFidelidade(): Date {
+    return this.periodoFidelidade.fim;
+  }
+
   static criar(
     codigo: bigint,
     codPlano: bigint,
@@ -61,12 +69,26 @@ export class Assinatura {
     );
   }
 
-  get inicioFidelidade(): Date {
-    return this.periodoFidelidade.inicio;
-  }
-
-  get fimFidelidade(): Date {
-    return this.periodoFidelidade.fim;
+  static reconstituir(
+    codigo: bigint,
+    codPlano: bigint,
+    codCli: bigint,
+    inicioFidelidade: Date,
+    fimFidelidade: Date,
+    dataUltimoPagamento: Date,
+    custoFinal: number,
+    descricao: string,
+  ): Assinatura {
+    const periodo = new Periodo(inicioFidelidade, fimFidelidade);
+    return new Assinatura(
+      codigo,
+      codPlano,
+      codCli,
+      periodo,
+      dataUltimoPagamento,
+      custoFinal,
+      descricao,
+    );
   }
 
   estaAtiva(

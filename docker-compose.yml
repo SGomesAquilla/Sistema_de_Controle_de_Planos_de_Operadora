@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres-gestao:
+    image: postgres:15
+    container_name: postgres-gestao
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senha123
+      POSTGRES_DB: servico_gestao
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres-gestao-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-gestao-data:
