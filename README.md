@@ -44,10 +44,7 @@ O sistema adota uma **Arquitetura Híbrida** composta por uma API Gateway como p
 
 ## Diagrama de Classes
 
-
-classDiagram
-
-
+```mermaid
 class AppModule{
             
             
@@ -375,3 +372,4 @@ class PrismaService{
 PrismaClient~ClientOptions,U,ExtArgs~<|--PrismaService
 OnModuleInit<|..PrismaService
 OnModuleDestroy<|..PrismaService
+```
