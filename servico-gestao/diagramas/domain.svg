@@ -1,0 +1,258 @@
+<svg version="1.1" baseProfile="full" width="2048.0" height="451.0" viewBox="0 0 2048 451" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<desc >#.interface: fill=lightblue
+#.enumeration: fill=lightgreen
+#.type: fill=lightgray
+
+[Assinatura|-static DIAS_VALIDADE_PAGAMENTO: 30;+codigo: bigint;+codPlano: bigint;+codCli: bigint;-periodoFidelidade: Periodo;+dataUltimoPagamento: Date;+custoFinal: number;+descricao: string|+static criar(): Assinatura;+static reconstituir(): Assinatura;+estaAtiva(): boolean;+obterStatus(): StatusAssinatura;+estaEmFidelidade(): boolean;+registrarPagamento(): void;+alterarPeriodoFidelidade(): void]
+[&lt;enumeration&gt;StatusAssinatura|ATIVO;CANCELADO]
+[Cliente|+codigo: bigint;+nome: string;+email: string|-validar(): void]
+[PagamentoInvalidoError||]
+[Pagamento|+codigo: bigint;+codAss: bigint;+valorPago: number;+dataPagamento: Date|-validar(): void]
+[DomainError]&lt;:-[PagamentoInvalidoError]
+[Plano|+custoMensal: CustoMensal;+codigo: bigint;+nome: string;+data: Date;+descricao: string|+atualizarCusto(): void;-validar(): void]
+[CustoMensal|+valor: number|+equals(): boolean]
+[Periodo|-static DIAS_FIDELIDADE_PADRAO: 365;+inicio: Date;+fim: Date|+static criarComFidelidadePadrao(): Periodo;+contem(): boolean;+equals(): boolean]</desc>
+<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
+<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+<g stroke="transparent" fill="transparent">
+<rect x="0.0" y="0.0" height="451.0" width="2048.0" stroke="none"></rect>
+</g>
+<g transform="translate(8, 8)" fill="#33322E">
+<g transform="translate(20, 20)" fill="#eee8d5" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+<path d="M1044.5 182.8 L1044.5 327 L1044.5 347 L1044.5 347.0 " fill="none"></path>
+<path d="M1049.8 182.8 L1044.5 182.8 L1039.2 182.8 L1044.5 169.5 Z"></path>
+<g data-name="Assinatura">
+<g fill="#eee8d5" stroke="#33322E" data-name="Assinatura">
+<rect x="0.0" y="0.0" height="307.0" width="347.0" data-name="Assinatura"></rect>
+<path d="M0.0 32.0 L347.0 32.0" fill="none" data-name="Assinatura"></path>
+<path d="M0.0 178.0 L347.0 178.0" fill="none" data-name="Assinatura"></path>
+</g>
+<g transform="translate(0, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Assinatura" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Assinatura" data-compartment="0">
+<a id="src\domain\entities\Assinatura.ts.Assinatura" xlink:href="src\domain\entities\Assinatura.ts"><text x="165.5" y="14.1" stroke="none" text-anchor="middle" data-name="Assinatura" data-compartment="0">Assinatura</text></a>
+
+</g>
+</g>
+<g transform="translate(0, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Assinatura" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Assinatura" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Assinatura" data-compartment="1">-static DIAS_VALIDADE_PAGAMENTO: 30</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Assinatura" data-compartment="1">+codigo: bigint</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Assinatura" data-compartment="1">+codPlano: bigint</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Assinatura" data-compartment="1">+codCli: bigint</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Assinatura" data-compartment="1">-periodoFidelidade: Periodo</text>
+<text x="0.0" y="95.1" stroke="none" data-name="Assinatura" data-compartment="1">+dataUltimoPagamento: Date</text>
+<text x="0.0" y="111.3" stroke="none" data-name="Assinatura" data-compartment="1">+custoFinal: number</text>
+<text x="0.0" y="127.5" stroke="none" data-name="Assinatura" data-compartment="1">+descricao: string</text>
+
+</g>
+</g>
+<g transform="translate(0, 178)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Assinatura" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Assinatura" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="Assinatura" data-compartment="2">+static criar(): Assinatura</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Assinatura" data-compartment="2">+static reconstituir(): Assinatura</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Assinatura" data-compartment="2">+estaAtiva(): boolean</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Assinatura" data-compartment="2">+obterStatus(): StatusAssinatura</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Assinatura" data-compartment="2">+estaEmFidelidade(): boolean</text>
+<text x="0.0" y="95.1" stroke="none" data-name="Assinatura" data-compartment="2">+registrarPagamento(): void</text>
+<text x="0.0" y="111.3" stroke="none" data-name="Assinatura" data-compartment="2">+alterarPeriodoFidelidade(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="StatusAssinatura">
+<g fill="lightgreen" stroke="#33322E" data-name="StatusAssinatura">
+<rect x="387.0" y="113.5" height="80.0" width="150.0" data-name="StatusAssinatura"></rect>
+<path d="M387.0 145.5 L537.0 145.5" fill="none" data-name="StatusAssinatura"></path>
+</g>
+<g transform="translate(387, 113.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="StatusAssinatura" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="StatusAssinatura" data-compartment="0">
+<a id="src\domain\entities\Assinatura.ts.StatusAssinatura" xlink:href="src\domain\entities\Assinatura.ts"><text x="67.0" y="14.1" stroke="none" text-anchor="middle" data-name="StatusAssinatura" data-compartment="0">StatusAssinatura</text></a>
+
+</g>
+</g>
+<g transform="translate(387, 145.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="StatusAssinatura" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="StatusAssinatura" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="StatusAssinatura" data-compartment="1">ATIVO</text>
+<text x="0.0" y="30.3" stroke="none" data-name="StatusAssinatura" data-compartment="1">CANCELADO</text>
+
+</g>
+</g>
+</g>
+<g data-name="Cliente">
+<g fill="#eee8d5" stroke="#33322E" data-name="Cliente">
+<rect x="577.0" y="89.0" height="129.0" width="132.0" data-name="Cliente"></rect>
+<path d="M577.0 121.0 L709.0 121.0" fill="none" data-name="Cliente"></path>
+<path d="M577.0 186.0 L709.0 186.0" fill="none" data-name="Cliente"></path>
+</g>
+<g transform="translate(577, 89)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Cliente" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Cliente" data-compartment="0">
+<a id="src\domain\entities\Cliente.ts.Cliente" xlink:href="src\domain\entities\Cliente.ts"><text x="58.0" y="14.1" stroke="none" text-anchor="middle" data-name="Cliente" data-compartment="0">Cliente</text></a>
+
+</g>
+</g>
+<g transform="translate(577, 121)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Cliente" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Cliente" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Cliente" data-compartment="1">+codigo: bigint</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Cliente" data-compartment="1">+nome: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Cliente" data-compartment="1">+email: string</text>
+
+</g>
+</g>
+<g transform="translate(577, 186)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Cliente" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Cliente" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="Cliente" data-compartment="2">-validar(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="PagamentoInvalidoError">
+<g fill="#eee8d5" stroke="#33322E" data-name="PagamentoInvalidoError">
+<rect x="941.0" y="347.0" height="48.0" width="207.0" data-name="PagamentoInvalidoError"></rect>
+<path d="M941.0 379.0 L1148.0 379.0" fill="none" data-name="PagamentoInvalidoError"></path>
+<path d="M941.0 387.0 L1148.0 387.0" fill="none" data-name="PagamentoInvalidoError"></path>
+</g>
+<g transform="translate(941, 347)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PagamentoInvalidoError" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PagamentoInvalidoError" data-compartment="0">
+<a id="src\domain\entities\Pagamento.ts.PagamentoInvalidoError" xlink:href="src\domain\entities\Pagamento.ts"><text x="95.5" y="14.1" stroke="none" text-anchor="middle" data-name="PagamentoInvalidoError" data-compartment="0">PagamentoInvalidoError</text></a>
+
+</g>
+</g>
+<g transform="translate(941, 379)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PagamentoInvalidoError" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PagamentoInvalidoError" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(941, 387)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PagamentoInvalidoError" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PagamentoInvalidoError" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="Pagamento">
+<g fill="#eee8d5" stroke="#33322E" data-name="Pagamento">
+<rect x="749.0" y="81.0" height="145.0" width="198.0" data-name="Pagamento"></rect>
+<path d="M749.0 113.0 L947.0 113.0" fill="none" data-name="Pagamento"></path>
+<path d="M749.0 194.0 L947.0 194.0" fill="none" data-name="Pagamento"></path>
+</g>
+<g transform="translate(749, 81)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Pagamento" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Pagamento" data-compartment="0">
+<a id="src\domain\entities\Pagamento.ts.Pagamento" xlink:href="src\domain\entities\Pagamento.ts"><text x="91.0" y="14.1" stroke="none" text-anchor="middle" data-name="Pagamento" data-compartment="0">Pagamento</text></a>
+
+</g>
+</g>
+<g transform="translate(749, 113)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Pagamento" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Pagamento" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Pagamento" data-compartment="1">+codigo: bigint</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Pagamento" data-compartment="1">+codAss: bigint</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Pagamento" data-compartment="1">+valorPago: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Pagamento" data-compartment="1">+dataPagamento: Date</text>
+
+</g>
+</g>
+<g transform="translate(749, 194)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Pagamento" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Pagamento" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="Pagamento" data-compartment="2">-validar(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="DomainError">
+<g fill="#eee8d5" stroke="#33322E" data-name="DomainError">
+<rect x="987.0" y="137.5" height="32.0" width="115.0" data-name="DomainError"></rect>
+</g>
+<g transform="translate(987, 137.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="DomainError" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="DomainError" data-compartment="0">
+<text x="49.5" y="14.1" stroke="none" text-anchor="middle" data-name="DomainError" data-compartment="0">DomainError</text>
+
+</g>
+</g>
+</g>
+<g data-name="Plano">
+<g fill="#eee8d5" stroke="#33322E" data-name="Plano">
+<rect x="1142.0" y="65.0" height="177.0" width="239.0" data-name="Plano"></rect>
+<path d="M1142.0 97.0 L1381.0 97.0" fill="none" data-name="Plano"></path>
+<path d="M1142.0 194.0 L1381.0 194.0" fill="none" data-name="Plano"></path>
+</g>
+<g transform="translate(1142, 65)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Plano" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Plano" data-compartment="0">
+<a id="src\domain\entities\Plano.ts.Plano" xlink:href="src\domain\entities\Plano.ts"><text x="111.5" y="14.1" stroke="none" text-anchor="middle" data-name="Plano" data-compartment="0">Plano</text></a>
+
+</g>
+</g>
+<g transform="translate(1142, 97)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Plano" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Plano" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Plano" data-compartment="1">+custoMensal: CustoMensal</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Plano" data-compartment="1">+codigo: bigint</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Plano" data-compartment="1">+nome: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Plano" data-compartment="1">+data: Date</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Plano" data-compartment="1">+descricao: string</text>
+
+</g>
+</g>
+<g transform="translate(1142, 194)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Plano" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Plano" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="Plano" data-compartment="2">+atualizarCusto(): void</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Plano" data-compartment="2">-validar(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="CustoMensal">
+<g fill="#eee8d5" stroke="#33322E" data-name="CustoMensal">
+<rect x="1421.0" y="105.5" height="96.0" width="165.0" data-name="CustoMensal"></rect>
+<path d="M1421.0 137.5 L1586.0 137.5" fill="none" data-name="CustoMensal"></path>
+<path d="M1421.0 169.5 L1586.0 169.5" fill="none" data-name="CustoMensal"></path>
+</g>
+<g transform="translate(1421, 105.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CustoMensal" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CustoMensal" data-compartment="0">
+<a id="src\domain\value-objects\CustoMensal.ts.CustoMensal" xlink:href="src\domain\value-objects\CustoMensal.ts"><text x="74.5" y="14.1" stroke="none" text-anchor="middle" data-name="CustoMensal" data-compartment="0">CustoMensal</text></a>
+
+</g>
+</g>
+<g transform="translate(1421, 137.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CustoMensal" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CustoMensal" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CustoMensal" data-compartment="1">+valor: number</text>
+
+</g>
+</g>
+<g transform="translate(1421, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CustoMensal" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CustoMensal" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="CustoMensal" data-compartment="2">+equals(): boolean</text>
+
+</g>
+</g>
+</g>
+<g data-name="Periodo">
+<g fill="#eee8d5" stroke="#33322E" data-name="Periodo">
+<rect x="1626.0" y="72.5" height="162.0" width="366.0" data-name="Periodo"></rect>
+<path d="M1626.0 104.5 L1992.0 104.5" fill="none" data-name="Periodo"></path>
+<path d="M1626.0 169.5 L1992.0 169.5" fill="none" data-name="Periodo"></path>
+</g>
+<g transform="translate(1626, 72.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Periodo" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Periodo" data-compartment="0">
+<a id="src\domain\value-objects\Periodo.ts.Periodo" xlink:href="src\domain\value-objects\Periodo.ts"><text x="175.0" y="14.1" stroke="none" text-anchor="middle" data-name="Periodo" data-compartment="0">Periodo</text></a>
+
+</g>
+</g>
+<g transform="translate(1626, 104.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Periodo" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Periodo" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Periodo" data-compartment="1">-static DIAS_FIDELIDADE_PADRAO: 365</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Periodo" data-compartment="1">+inicio: Date</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Periodo" data-compartment="1">+fim: Date</text>
+
+</g>
+</g>
+<g transform="translate(1626, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Periodo" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Periodo" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="Periodo" data-compartment="2">+static criarComFidelidadePadrao(): Periodo</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Periodo" data-compartment="2">+contem(): boolean</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Periodo" data-compartment="2">+equals(): boolean</text>
+
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

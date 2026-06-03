@@ -1,0 +1,154 @@
+<svg version="1.1" baseProfile="full" width="1128.0" height="232.0" viewBox="0 0 1128 232" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<desc >#.interface: fill=lightblue
+#.enumeration: fill=lightgreen
+#.type: fill=lightgray
+
+[NoOpEventPublisher||+publish(): Promise&lt;void&gt;]
+[IEventPublisher]&lt;:--[NoOpEventPublisher]
+[PrismaModule||]
+[PrismaService||+onModuleInit(): Promise&lt;void&gt;;+onModuleDestroy(): Promise&lt;void&gt;]
+[PrismaClient&lt;ClientOptions,U,ExtArgs&gt;]&lt;:-[PrismaService]
+[OnModuleInit]&lt;:--[PrismaService]
+[OnModuleDestroy]&lt;:--[PrismaService]</desc>
+<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="bold" font-style="normal">
+<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+<g stroke="transparent" fill="transparent">
+<rect x="0.0" y="0.0" height="232.0" width="1128.0" stroke="none"></rect>
+</g>
+<g transform="translate(8, 8)" fill="#33322E">
+<g transform="translate(20, 20)" fill="#eee8d5" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+<g stroke-dasharray="6 6">
+<path d="M111.0 53.3 L111 68 L111 96 L111.0 96.0 " fill="none"></path>
+</g>
+<path d="M116.3 53.3 L111.0 53.3 L105.7 53.3 L111.0 40.0 Z"></path>
+<path d="M551.0 53.3 L551 68 L661.5 94.94095238095238 L661.5 94.9 " fill="none"></path>
+<path d="M556.3 53.3 L551.0 53.3 L545.7 53.3 L551.0 40.0 Z"></path>
+<g stroke-dasharray="6 6">
+<path d="M813.5 53.3 L813.5 68 L813.5 88 L813.5 88.0 " fill="none"></path>
+</g>
+<path d="M818.8 53.3 L813.5 53.3 L808.2 53.3 L813.5 40.0 Z"></path>
+<g stroke-dasharray="6 6">
+<path d="M993.0 53.3 L993 68 L936.90625 88 L936.9 88.0 " fill="none"></path>
+</g>
+<path d="M998.3 53.3 L993.0 53.3 L987.7 53.3 L993.0 40.0 Z"></path>
+<g data-name="NoOpEventPublisher">
+<g fill="#eee8d5" stroke="#33322E" data-name="NoOpEventPublisher">
+<rect x="0.0" y="96.0" height="72.0" width="222.0" data-name="NoOpEventPublisher"></rect>
+<path d="M0.0 128.0 L222.0 128.0" fill="none" data-name="NoOpEventPublisher"></path>
+<path d="M0.0 136.0 L222.0 136.0" fill="none" data-name="NoOpEventPublisher"></path>
+</g>
+<g transform="translate(0, 96)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="NoOpEventPublisher" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="NoOpEventPublisher" data-compartment="0">
+<a id="src\infrastructure\container\NoOpEventPublisher.ts.NoOpEventPublisher" xlink:href="src\infrastructure\container\NoOpEventPublisher.ts"><text x="103.0" y="14.1" stroke="none" text-anchor="middle" data-name="NoOpEventPublisher" data-compartment="0">NoOpEventPublisher</text></a>
+
+</g>
+</g>
+<g transform="translate(0, 128)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="NoOpEventPublisher" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="NoOpEventPublisher" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(0, 136)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="NoOpEventPublisher" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="NoOpEventPublisher" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="NoOpEventPublisher" data-compartment="2">+publish(): Promise&lt;void&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="IEventPublisher">
+<g fill="#eee8d5" stroke="#33322E" data-name="IEventPublisher">
+<rect x="41.0" y="8.0" height="32.0" width="140.0" data-name="IEventPublisher"></rect>
+</g>
+<g transform="translate(41, 8)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="IEventPublisher" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IEventPublisher" data-compartment="0">
+<text x="62.0" y="14.1" stroke="none" text-anchor="middle" data-name="IEventPublisher" data-compartment="0">IEventPublisher</text>
+
+</g>
+</g>
+</g>
+<g data-name="PrismaModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="PrismaModule">
+<rect x="221.0" y="0.0" height="48.0" width="128.0" data-name="PrismaModule"></rect>
+<path d="M221.0 32.0 L349.0 32.0" fill="none" data-name="PrismaModule"></path>
+<path d="M221.0 40.0 L349.0 40.0" fill="none" data-name="PrismaModule"></path>
+</g>
+<g transform="translate(221, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PrismaModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PrismaModule" data-compartment="0">
+<a id="src\infrastructure\database\prisma\PrismaModule.ts.PrismaModule" xlink:href="src\infrastructure\database\prisma\PrismaModule.ts"><text x="56.0" y="14.1" stroke="none" text-anchor="middle" data-name="PrismaModule" data-compartment="0">PrismaModule</text></a>
+
+</g>
+</g>
+<g transform="translate(221, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PrismaModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PrismaModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(221, 40)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PrismaModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PrismaModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="PrismaService">
+<g fill="#eee8d5" stroke="#33322E" data-name="PrismaService">
+<rect x="661.5" y="88.0" height="88.0" width="304.0" data-name="PrismaService"></rect>
+<path d="M661.5 120.0 L965.5 120.0" fill="none" data-name="PrismaService"></path>
+<path d="M661.5 128.0 L965.5 128.0" fill="none" data-name="PrismaService"></path>
+</g>
+<g transform="translate(661.5, 88)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PrismaService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PrismaService" data-compartment="0">
+<a id="src\infrastructure\database\prisma\PrismaService.ts.PrismaService" xlink:href="src\infrastructure\database\prisma\PrismaService.ts"><text x="144.0" y="14.1" stroke="none" text-anchor="middle" data-name="PrismaService" data-compartment="0">PrismaService</text></a>
+
+</g>
+</g>
+<g transform="translate(661.5, 120)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PrismaService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PrismaService" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(661.5, 128)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PrismaService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PrismaService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="PrismaService" data-compartment="2">+onModuleInit(): Promise&lt;void&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="PrismaService" data-compartment="2">+onModuleDestroy(): Promise&lt;void&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="PrismaClient&lt;ClientOptions,U,ExtArgs&gt;">
+<g fill="#eee8d5" stroke="#33322E" data-name="PrismaClient&lt;ClientOptions,U,ExtArgs&gt;">
+<rect x="389.0" y="8.0" height="32.0" width="324.0" data-name="PrismaClient&lt;ClientOptions,U,ExtArgs&gt;"></rect>
+</g>
+<g transform="translate(389, 8)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PrismaClient&lt;ClientOptions,U,ExtArgs&gt;" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PrismaClient&lt;ClientOptions,U,ExtArgs&gt;" data-compartment="0">
+<text x="154.0" y="14.1" stroke="none" text-anchor="middle" data-name="PrismaClient&lt;ClientOptions,U,ExtArgs&gt;" data-compartment="0">PrismaClient&lt;ClientOptions,U,ExtArgs&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="OnModuleInit">
+<g fill="#eee8d5" stroke="#33322E" data-name="OnModuleInit">
+<rect x="753.0" y="8.0" height="32.0" width="121.0" data-name="OnModuleInit"></rect>
+</g>
+<g transform="translate(753, 8)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="OnModuleInit" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="OnModuleInit" data-compartment="0">
+<text x="52.5" y="14.1" stroke="none" text-anchor="middle" data-name="OnModuleInit" data-compartment="0">OnModuleInit</text>
+
+</g>
+</g>
+</g>
+<g data-name="OnModuleDestroy">
+<g fill="#eee8d5" stroke="#33322E" data-name="OnModuleDestroy">
+<rect x="914.0" y="8.0" height="32.0" width="158.0" data-name="OnModuleDestroy"></rect>
+</g>
+<g transform="translate(914, 8)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="OnModuleDestroy" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="OnModuleDestroy" data-compartment="0">
+<text x="71.0" y="14.1" stroke="none" text-anchor="middle" data-name="OnModuleDestroy" data-compartment="0">OnModuleDestroy</text>
+
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

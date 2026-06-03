@@ -1,0 +1,310 @@
+<svg version="1.1" baseProfile="full" width="3188.0" height="483.0" viewBox="0 0 3188 483" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<desc >#.interface: fill=lightblue
+#.enumeration: fill=lightgreen
+#.type: fill=lightgray
+
+[AssinaturaController|-criarAssinaturaUseCase: CriarAssinaturaUseCase;-listarAssinaturasPorTipoUseCase: ListarAssinaturasPorTipoUseCase;-listarAssinaturasPorClienteUseCase: ListarAssinaturasPorClienteUseCase;-listarAssinaturasPorPlanoUseCase: ListarAssinaturasPorPlanoUseCase|+criarAssinatura(): Promise&lt;AssinaturaResponseDTO&gt;;+listarPorTipo(): Promise&lt;AssinaturaResponseDTO\[\]&gt;;+listarPorCliente(): Promise&lt;AssinaturaResponseDTO\[\]&gt;;+listarPorPlano(): Promise&lt;AssinaturaResponseDTO\[\]&gt;]
+[ClienteController|-listarClientesUseCase: ListarClientesUseCase|+listarClientes(): Promise&lt;ClienteResponseDTO\[\]&gt;]
+[PlanoController|-listarPlanosUseCase: ListarPlanosUseCase;-atualizarCustoPlanoUseCase: AtualizarCustoPlanoUseCase|+listarPlanos(): Promise&lt;PlanoResponseDTO\[\]&gt;;+atualizarCusto(): Promise&lt;PlanoResponseDTO&gt;]
+[AssinaturaModule||]
+[ClienteModule||]
+[PlanoModule||]
+[PrismaAssinaturaRepository|-prisma: PrismaService|-toEntity(): Assinatura;+save(): Promise&lt;Assinatura&gt;;+findAll(): Promise&lt;Assinatura\[\]&gt;;+findById(): Promise&lt;Assinatura \| null&gt;;+findByCliente(): Promise&lt;Assinatura\[\]&gt;;+findByPlano(): Promise&lt;Assinatura\[\]&gt;;+findByStatus(): Promise&lt;Assinatura\[\]&gt;]
+[IAssinaturaRepository]&lt;:--[PrismaAssinaturaRepository]
+[PrismaClienteRepository|-prisma: PrismaService|+findAll(): Promise&lt;Cliente\[\]&gt;;+findById(): Promise&lt;Cliente \| null&gt;]
+[IClienteRepository]&lt;:--[PrismaClienteRepository]
+[PrismaPlanoRepository|-prisma: PrismaService|+findAll(): Promise&lt;Plano\[\]&gt;;+findById(): Promise&lt;Plano \| null&gt;;+updateCustoMensal(): Promise&lt;Plano&gt;]
+[IPlanoRepository]&lt;:--[PrismaPlanoRepository]</desc>
+<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="bold" font-style="normal">
+<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+<g stroke="transparent" fill="transparent">
+<rect x="0.0" y="0.0" height="483.0" width="3188.0" stroke="none"></rect>
+</g>
+<g transform="translate(8, 8)" fill="#33322E">
+<g transform="translate(20, 20)" fill="#eee8d5" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+<g stroke-dasharray="6 6">
+<path d="M2258.0 126.3 L2258 214 L2258 234 L2258.0 234.0 " fill="none"></path>
+</g>
+<path d="M2263.3 126.3 L2258.0 126.3 L2252.7 126.3 L2258.0 113.0 Z"></path>
+<g stroke-dasharray="6 6">
+<path d="M2610.0 126.3 L2610 214 L2610 274.5 L2610.0 274.5 " fill="none"></path>
+</g>
+<path d="M2615.3 126.3 L2610.0 126.3 L2604.7 126.3 L2610.0 113.0 Z"></path>
+<g stroke-dasharray="6 6">
+<path d="M2964.5 126.3 L2964.5 214 L2964.5 266 L2964.5 266.0 " fill="none"></path>
+</g>
+<path d="M2969.8 126.3 L2964.5 126.3 L2959.2 126.3 L2964.5 113.0 Z"></path>
+<g data-name="AssinaturaController">
+<g fill="#eee8d5" stroke="#33322E" data-name="AssinaturaController">
+<rect x="0.0" y="0.0" height="194.0" width="608.0" data-name="AssinaturaController"></rect>
+<path d="M0.0 32.0 L608.0 32.0" fill="none" data-name="AssinaturaController"></path>
+<path d="M0.0 113.0 L608.0 113.0" fill="none" data-name="AssinaturaController"></path>
+</g>
+<g transform="translate(0, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AssinaturaController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AssinaturaController" data-compartment="0">
+<a id="src\adapters\controllers\AssinaturaController.ts.AssinaturaController" xlink:href="src\adapters\controllers\AssinaturaController.ts"><text x="296.0" y="14.1" stroke="none" text-anchor="middle" data-name="AssinaturaController" data-compartment="0">AssinaturaController</text></a>
+
+</g>
+</g>
+<g transform="translate(0, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AssinaturaController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AssinaturaController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="AssinaturaController" data-compartment="1">-criarAssinaturaUseCase: CriarAssinaturaUseCase</text>
+<text x="0.0" y="30.3" stroke="none" data-name="AssinaturaController" data-compartment="1">-listarAssinaturasPorTipoUseCase: ListarAssinaturasPorTipoUseCase</text>
+<text x="0.0" y="46.5" stroke="none" data-name="AssinaturaController" data-compartment="1">-listarAssinaturasPorClienteUseCase: ListarAssinaturasPorClienteUseCase</text>
+<text x="0.0" y="62.7" stroke="none" data-name="AssinaturaController" data-compartment="1">-listarAssinaturasPorPlanoUseCase: ListarAssinaturasPorPlanoUseCase</text>
+
+</g>
+</g>
+<g transform="translate(0, 113)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AssinaturaController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AssinaturaController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="AssinaturaController" data-compartment="2">+criarAssinatura(): Promise&lt;AssinaturaResponseDTO&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="AssinaturaController" data-compartment="2">+listarPorTipo(): Promise&lt;AssinaturaResponseDTO[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="AssinaturaController" data-compartment="2">+listarPorCliente(): Promise&lt;AssinaturaResponseDTO[]&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="AssinaturaController" data-compartment="2">+listarPorPlano(): Promise&lt;AssinaturaResponseDTO[]&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ClienteController">
+<g fill="#eee8d5" stroke="#33322E" data-name="ClienteController">
+<rect x="648.0" y="49.0" height="96.0" width="414.0" data-name="ClienteController"></rect>
+<path d="M648.0 81.0 L1062.0 81.0" fill="none" data-name="ClienteController"></path>
+<path d="M648.0 113.0 L1062.0 113.0" fill="none" data-name="ClienteController"></path>
+</g>
+<g transform="translate(648, 49)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ClienteController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ClienteController" data-compartment="0">
+<a id="src\adapters\controllers\ClienteController.ts.ClienteController" xlink:href="src\adapters\controllers\ClienteController.ts"><text x="199.0" y="14.1" stroke="none" text-anchor="middle" data-name="ClienteController" data-compartment="0">ClienteController</text></a>
+
+</g>
+</g>
+<g transform="translate(648, 81)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ClienteController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ClienteController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ClienteController" data-compartment="1">-listarClientesUseCase: ListarClientesUseCase</text>
+
+</g>
+</g>
+<g transform="translate(648, 113)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ClienteController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ClienteController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ClienteController" data-compartment="2">+listarClientes(): Promise&lt;ClienteResponseDTO[]&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="PlanoController">
+<g fill="#eee8d5" stroke="#33322E" data-name="PlanoController">
+<rect x="1102.0" y="33.0" height="128.0" width="495.0" data-name="PlanoController"></rect>
+<path d="M1102.0 65.0 L1597.0 65.0" fill="none" data-name="PlanoController"></path>
+<path d="M1102.0 113.0 L1597.0 113.0" fill="none" data-name="PlanoController"></path>
+</g>
+<g transform="translate(1102, 33)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PlanoController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PlanoController" data-compartment="0">
+<a id="src\adapters\controllers\PlanoController.ts.PlanoController" xlink:href="src\adapters\controllers\PlanoController.ts"><text x="239.5" y="14.1" stroke="none" text-anchor="middle" data-name="PlanoController" data-compartment="0">PlanoController</text></a>
+
+</g>
+</g>
+<g transform="translate(1102, 65)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PlanoController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PlanoController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="PlanoController" data-compartment="1">-listarPlanosUseCase: ListarPlanosUseCase</text>
+<text x="0.0" y="30.3" stroke="none" data-name="PlanoController" data-compartment="1">-atualizarCustoPlanoUseCase: AtualizarCustoPlanoUseCase</text>
+
+</g>
+</g>
+<g transform="translate(1102, 113)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PlanoController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PlanoController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="PlanoController" data-compartment="2">+listarPlanos(): Promise&lt;PlanoResponseDTO[]&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="PlanoController" data-compartment="2">+atualizarCusto(): Promise&lt;PlanoResponseDTO&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="AssinaturaModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="AssinaturaModule">
+<rect x="1637.0" y="73.0" height="48.0" width="158.0" data-name="AssinaturaModule"></rect>
+<path d="M1637.0 105.0 L1795.0 105.0" fill="none" data-name="AssinaturaModule"></path>
+<path d="M1637.0 113.0 L1795.0 113.0" fill="none" data-name="AssinaturaModule"></path>
+</g>
+<g transform="translate(1637, 73)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AssinaturaModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AssinaturaModule" data-compartment="0">
+<a id="src\adapters\modules\AssinaturaModule.ts.AssinaturaModule" xlink:href="src\adapters\modules\AssinaturaModule.ts"><text x="71.0" y="14.1" stroke="none" text-anchor="middle" data-name="AssinaturaModule" data-compartment="0">AssinaturaModule</text></a>
+
+</g>
+</g>
+<g transform="translate(1637, 105)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AssinaturaModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AssinaturaModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(1637, 113)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AssinaturaModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AssinaturaModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="ClienteModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="ClienteModule">
+<rect x="1835.0" y="73.0" height="48.0" width="129.0" data-name="ClienteModule"></rect>
+<path d="M1835.0 105.0 L1964.0 105.0" fill="none" data-name="ClienteModule"></path>
+<path d="M1835.0 113.0 L1964.0 113.0" fill="none" data-name="ClienteModule"></path>
+</g>
+<g transform="translate(1835, 73)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ClienteModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ClienteModule" data-compartment="0">
+<a id="src\adapters\modules\ClienteModule.ts.ClienteModule" xlink:href="src\adapters\modules\ClienteModule.ts"><text x="56.5" y="14.1" stroke="none" text-anchor="middle" data-name="ClienteModule" data-compartment="0">ClienteModule</text></a>
+
+</g>
+</g>
+<g transform="translate(1835, 105)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ClienteModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ClienteModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(1835, 113)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ClienteModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ClienteModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="PlanoModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="PlanoModule">
+<rect x="2004.0" y="73.0" height="48.0" width="119.0" data-name="PlanoModule"></rect>
+<path d="M2004.0 105.0 L2123.0 105.0" fill="none" data-name="PlanoModule"></path>
+<path d="M2004.0 113.0 L2123.0 113.0" fill="none" data-name="PlanoModule"></path>
+</g>
+<g transform="translate(2004, 73)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PlanoModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PlanoModule" data-compartment="0">
+<a id="src\adapters\modules\PlanoModule.ts.PlanoModule" xlink:href="src\adapters\modules\PlanoModule.ts"><text x="51.5" y="14.1" stroke="none" text-anchor="middle" data-name="PlanoModule" data-compartment="0">PlanoModule</text></a>
+
+</g>
+</g>
+<g transform="translate(2004, 105)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PlanoModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PlanoModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(2004, 113)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PlanoModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PlanoModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="PrismaAssinaturaRepository">
+<g fill="#eee8d5" stroke="#33322E" data-name="PrismaAssinaturaRepository">
+<rect x="2093.0" y="234.0" height="193.0" width="330.0" data-name="PrismaAssinaturaRepository"></rect>
+<path d="M2093.0 266.0 L2423.0 266.0" fill="none" data-name="PrismaAssinaturaRepository"></path>
+<path d="M2093.0 298.0 L2423.0 298.0" fill="none" data-name="PrismaAssinaturaRepository"></path>
+</g>
+<g transform="translate(2093, 234)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PrismaAssinaturaRepository" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PrismaAssinaturaRepository" data-compartment="0">
+<a id="src\adapters\repositories\PrismaAssinaturaRepository.ts.PrismaAssinaturaRepository" xlink:href="src\adapters\repositories\PrismaAssinaturaRepository.ts"><text x="157.0" y="14.1" stroke="none" text-anchor="middle" data-name="PrismaAssinaturaRepository" data-compartment="0">PrismaAssinaturaRepository</text></a>
+
+</g>
+</g>
+<g transform="translate(2093, 266)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PrismaAssinaturaRepository" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PrismaAssinaturaRepository" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="PrismaAssinaturaRepository" data-compartment="1">-prisma: PrismaService</text>
+
+</g>
+</g>
+<g transform="translate(2093, 298)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PrismaAssinaturaRepository" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PrismaAssinaturaRepository" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="PrismaAssinaturaRepository" data-compartment="2">-toEntity(): Assinatura</text>
+<text x="0.0" y="30.3" stroke="none" data-name="PrismaAssinaturaRepository" data-compartment="2">+save(): Promise&lt;Assinatura&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="PrismaAssinaturaRepository" data-compartment="2">+findAll(): Promise&lt;Assinatura[]&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="PrismaAssinaturaRepository" data-compartment="2">+findById(): Promise&lt;Assinatura | null&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="PrismaAssinaturaRepository" data-compartment="2">+findByCliente(): Promise&lt;Assinatura[]&gt;</text>
+<text x="0.0" y="95.1" stroke="none" data-name="PrismaAssinaturaRepository" data-compartment="2">+findByPlano(): Promise&lt;Assinatura[]&gt;</text>
+<text x="0.0" y="111.3" stroke="none" data-name="PrismaAssinaturaRepository" data-compartment="2">+findByStatus(): Promise&lt;Assinatura[]&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="IAssinaturaRepository">
+<g fill="#eee8d5" stroke="#33322E" data-name="IAssinaturaRepository">
+<rect x="2163.0" y="81.0" height="32.0" width="190.0" data-name="IAssinaturaRepository"></rect>
+</g>
+<g transform="translate(2163, 81)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="IAssinaturaRepository" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IAssinaturaRepository" data-compartment="0">
+<text x="87.0" y="14.1" stroke="none" text-anchor="middle" data-name="IAssinaturaRepository" data-compartment="0">IAssinaturaRepository</text>
+
+</g>
+</g>
+</g>
+<g data-name="PrismaClienteRepository">
+<g fill="#eee8d5" stroke="#33322E" data-name="PrismaClienteRepository">
+<rect x="2463.0" y="274.5" height="112.0" width="294.0" data-name="PrismaClienteRepository"></rect>
+<path d="M2463.0 306.5 L2757.0 306.5" fill="none" data-name="PrismaClienteRepository"></path>
+<path d="M2463.0 338.5 L2757.0 338.5" fill="none" data-name="PrismaClienteRepository"></path>
+</g>
+<g transform="translate(2463, 274.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PrismaClienteRepository" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PrismaClienteRepository" data-compartment="0">
+<a id="src\adapters\repositories\PrismaClienteRepository.ts.PrismaClienteRepository" xlink:href="src\adapters\repositories\PrismaClienteRepository.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="PrismaClienteRepository" data-compartment="0">PrismaClienteRepository</text></a>
+
+</g>
+</g>
+<g transform="translate(2463, 306.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PrismaClienteRepository" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PrismaClienteRepository" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="PrismaClienteRepository" data-compartment="1">-prisma: PrismaService</text>
+
+</g>
+</g>
+<g transform="translate(2463, 338.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PrismaClienteRepository" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PrismaClienteRepository" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="PrismaClienteRepository" data-compartment="2">+findAll(): Promise&lt;Cliente[]&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="PrismaClienteRepository" data-compartment="2">+findById(): Promise&lt;Cliente | null&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="IClienteRepository">
+<g fill="#eee8d5" stroke="#33322E" data-name="IClienteRepository">
+<rect x="2529.5" y="81.0" height="32.0" width="161.0" data-name="IClienteRepository"></rect>
+</g>
+<g transform="translate(2529.5, 81)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="IClienteRepository" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IClienteRepository" data-compartment="0">
+<text x="72.5" y="14.1" stroke="none" text-anchor="middle" data-name="IClienteRepository" data-compartment="0">IClienteRepository</text>
+
+</g>
+</g>
+</g>
+<g data-name="PrismaPlanoRepository">
+<g fill="#eee8d5" stroke="#33322E" data-name="PrismaPlanoRepository">
+<rect x="2797.0" y="266.0" height="129.0" width="335.0" data-name="PrismaPlanoRepository"></rect>
+<path d="M2797.0 298.0 L3132.0 298.0" fill="none" data-name="PrismaPlanoRepository"></path>
+<path d="M2797.0 330.0 L3132.0 330.0" fill="none" data-name="PrismaPlanoRepository"></path>
+</g>
+<g transform="translate(2797, 266)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PrismaPlanoRepository" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PrismaPlanoRepository" data-compartment="0">
+<a id="src\adapters\repositories\PrismaPlanoRepository.ts.PrismaPlanoRepository" xlink:href="src\adapters\repositories\PrismaPlanoRepository.ts"><text x="159.5" y="14.1" stroke="none" text-anchor="middle" data-name="PrismaPlanoRepository" data-compartment="0">PrismaPlanoRepository</text></a>
+
+</g>
+</g>
+<g transform="translate(2797, 298)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PrismaPlanoRepository" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PrismaPlanoRepository" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="PrismaPlanoRepository" data-compartment="1">-prisma: PrismaService</text>
+
+</g>
+</g>
+<g transform="translate(2797, 330)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PrismaPlanoRepository" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PrismaPlanoRepository" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="PrismaPlanoRepository" data-compartment="2">+findAll(): Promise&lt;Plano[]&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="PrismaPlanoRepository" data-compartment="2">+findById(): Promise&lt;Plano | null&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="PrismaPlanoRepository" data-compartment="2">+updateCustoMensal(): Promise&lt;Plano&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="IPlanoRepository">
+<g fill="#eee8d5" stroke="#33322E" data-name="IPlanoRepository">
+<rect x="2889.0" y="81.0" height="32.0" width="151.0" data-name="IPlanoRepository"></rect>
+</g>
+<g transform="translate(2889, 81)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="IPlanoRepository" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IPlanoRepository" data-compartment="0">
+<text x="67.5" y="14.1" stroke="none" text-anchor="middle" data-name="IPlanoRepository" data-compartment="0">IPlanoRepository</text>
+
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

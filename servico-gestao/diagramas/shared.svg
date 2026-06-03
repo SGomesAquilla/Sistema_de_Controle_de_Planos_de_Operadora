@@ -1,0 +1,286 @@
+<svg version="1.1" baseProfile="full" width="1987.0" height="289.0" viewBox="0 0 1987 289" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<desc >#.interface: fill=lightblue
+#.enumeration: fill=lightgreen
+#.type: fill=lightgray
+
+[AssinaturaInvalidaError||]
+[AssinaturaNaoEncontradaError||]
+[DomainError]&lt;:-[AssinaturaInvalidaError]
+[DomainError]&lt;:-[AssinaturaNaoEncontradaError]
+[ClienteInvalidoError||]
+[ClienteNaoEncontradoError||]
+[DomainError]&lt;:-[ClienteInvalidoError]
+[DomainError]&lt;:-[ClienteNaoEncontradoError]
+[DomainError||]
+[PlanoInvalidoError||]
+[PlanoNaoEncontradoError||]
+[DomainError]&lt;:-[PlanoInvalidoError]
+[DomainError]&lt;:-[PlanoNaoEncontradoError]
+[CustoMensalInvalidoError||]
+[PeriodoInvalidoError||]
+[DomainError]&lt;:-[CustoMensalInvalidoError]
+[DomainError]&lt;:-[PeriodoInvalidoError]
+[Result&lt;T&gt;|+isSuccess: boolean;+error?: string;+value?: T|+static ok(): Result&lt;T&gt;;+static fail(): Result&lt;T&gt;]</desc>
+<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
+<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+<g stroke="transparent" fill="transparent">
+<rect x="0.0" y="0.0" height="289.0" width="1987.0" stroke="none"></rect>
+</g>
+<g transform="translate(8, 8)" fill="#33322E">
+<g transform="translate(20, 20)" fill="#eee8d5" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+<path d="M919.5 79.9 L100.5 165 L100.5 185 L100.5 185.0 " fill="none"></path>
+<path d="M920.0 85.2 L919.5 79.9 L918.9 74.6 L932.8 78.5 Z"></path>
+<path d="M919.6 83.1 L372 165 L372 185 L372.0 185.0 " fill="none"></path>
+<path d="M920.4 88.4 L919.6 83.1 L918.8 77.8 L932.8 81.1 Z"></path>
+<path d="M919.8 90.5 L629 165 L629 185 L629.0 185.0 " fill="none"></path>
+<path d="M921.2 95.7 L919.8 90.5 L918.5 85.4 L932.8 87.2 Z"></path>
+<path d="M948.9 104.7 L871.5 165 L871.5 185 L871.5 185.0 " fill="none"></path>
+<path d="M952.2 108.9 L948.9 104.7 L945.6 100.5 L959.4 96.5 Z"></path>
+<path d="M1031.6 104.7 L1109 165 L1109 185 L1109.0 185.0 " fill="none"></path>
+<path d="M1034.9 100.5 L1031.6 104.7 L1028.3 108.9 L1021.1 96.5 Z"></path>
+<path d="M1060.6 91.0 L1341.5 165 L1341.5 185 L1341.5 185.0 " fill="none"></path>
+<path d="M1062.0 85.9 L1060.6 91.0 L1059.3 96.2 L1047.8 87.6 Z"></path>
+<path d="M1060.9 83.2 L1603 165 L1603 185 L1603.0 185.0 " fill="none"></path>
+<path d="M1061.7 77.9 L1060.9 83.2 L1060.1 88.4 L1047.8 81.2 Z"></path>
+<path d="M1061.0 80.2 L1842 165 L1842 185 L1842.0 185.0 " fill="none"></path>
+<path d="M1061.6 74.9 L1061.0 80.2 L1060.4 85.5 L1047.8 78.7 Z"></path>
+<g data-name="AssinaturaInvalidaError">
+<g fill="#eee8d5" stroke="#33322E" data-name="AssinaturaInvalidaError">
+<rect x="0.0" y="185.0" height="48.0" width="201.0" data-name="AssinaturaInvalidaError"></rect>
+<path d="M0.0 217.0 L201.0 217.0" fill="none" data-name="AssinaturaInvalidaError"></path>
+<path d="M0.0 225.0 L201.0 225.0" fill="none" data-name="AssinaturaInvalidaError"></path>
+</g>
+<g transform="translate(0, 185)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AssinaturaInvalidaError" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AssinaturaInvalidaError" data-compartment="0">
+<a id="src\shared\errors\AssinaturaErrors.ts.AssinaturaInvalidaError" xlink:href="src\shared\errors\AssinaturaErrors.ts"><text x="92.5" y="14.1" stroke="none" text-anchor="middle" data-name="AssinaturaInvalidaError" data-compartment="0">AssinaturaInvalidaError</text></a>
+
+</g>
+</g>
+<g transform="translate(0, 217)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AssinaturaInvalidaError" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AssinaturaInvalidaError" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(0, 225)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AssinaturaInvalidaError" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AssinaturaInvalidaError" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="AssinaturaNaoEncontradaError">
+<g fill="#eee8d5" stroke="#33322E" data-name="AssinaturaNaoEncontradaError">
+<rect x="241.0" y="185.0" height="48.0" width="262.0" data-name="AssinaturaNaoEncontradaError"></rect>
+<path d="M241.0 217.0 L503.0 217.0" fill="none" data-name="AssinaturaNaoEncontradaError"></path>
+<path d="M241.0 225.0 L503.0 225.0" fill="none" data-name="AssinaturaNaoEncontradaError"></path>
+</g>
+<g transform="translate(241, 185)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AssinaturaNaoEncontradaError" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AssinaturaNaoEncontradaError" data-compartment="0">
+<a id="src\shared\errors\AssinaturaErrors.ts.AssinaturaNaoEncontradaError" xlink:href="src\shared\errors\AssinaturaErrors.ts"><text x="123.0" y="14.1" stroke="none" text-anchor="middle" data-name="AssinaturaNaoEncontradaError" data-compartment="0">AssinaturaNaoEncontradaError</text></a>
+
+</g>
+</g>
+<g transform="translate(241, 217)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AssinaturaNaoEncontradaError" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AssinaturaNaoEncontradaError" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(241, 225)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AssinaturaNaoEncontradaError" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AssinaturaNaoEncontradaError" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="DomainError">
+<g fill="#eee8d5" stroke="#33322E" data-name="DomainError">
+<rect x="932.8" y="48.5" height="48.0" width="115.0" data-name="DomainError"></rect>
+<path d="M932.8 80.5 L1047.8 80.5" fill="none" data-name="DomainError"></path>
+<path d="M932.8 88.5 L1047.8 88.5" fill="none" data-name="DomainError"></path>
+</g>
+<g transform="translate(932.75, 48.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="DomainError" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="DomainError" data-compartment="0">
+<a id="src\shared\errors\DomainError.ts.DomainError" xlink:href="src\shared\errors\DomainError.ts"><text x="49.5" y="14.1" stroke="none" text-anchor="middle" data-name="DomainError" data-compartment="0">DomainError</text></a>
+
+</g>
+</g>
+<g transform="translate(932.75, 80.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DomainError" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="DomainError" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(932.75, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DomainError" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="DomainError" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="ClienteInvalidoError">
+<g fill="#eee8d5" stroke="#33322E" data-name="ClienteInvalidoError">
+<rect x="543.0" y="185.0" height="48.0" width="172.0" data-name="ClienteInvalidoError"></rect>
+<path d="M543.0 217.0 L715.0 217.0" fill="none" data-name="ClienteInvalidoError"></path>
+<path d="M543.0 225.0 L715.0 225.0" fill="none" data-name="ClienteInvalidoError"></path>
+</g>
+<g transform="translate(543, 185)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ClienteInvalidoError" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ClienteInvalidoError" data-compartment="0">
+<a id="src\shared\errors\ClienteErrors.ts.ClienteInvalidoError" xlink:href="src\shared\errors\ClienteErrors.ts"><text x="78.0" y="14.1" stroke="none" text-anchor="middle" data-name="ClienteInvalidoError" data-compartment="0">ClienteInvalidoError</text></a>
+
+</g>
+</g>
+<g transform="translate(543, 217)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ClienteInvalidoError" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ClienteInvalidoError" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(543, 225)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ClienteInvalidoError" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ClienteInvalidoError" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="ClienteNaoEncontradoError">
+<g fill="#eee8d5" stroke="#33322E" data-name="ClienteNaoEncontradoError">
+<rect x="755.0" y="185.0" height="48.0" width="233.0" data-name="ClienteNaoEncontradoError"></rect>
+<path d="M755.0 217.0 L988.0 217.0" fill="none" data-name="ClienteNaoEncontradoError"></path>
+<path d="M755.0 225.0 L988.0 225.0" fill="none" data-name="ClienteNaoEncontradoError"></path>
+</g>
+<g transform="translate(755, 185)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ClienteNaoEncontradoError" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ClienteNaoEncontradoError" data-compartment="0">
+<a id="src\shared\errors\ClienteErrors.ts.ClienteNaoEncontradoError" xlink:href="src\shared\errors\ClienteErrors.ts"><text x="108.5" y="14.1" stroke="none" text-anchor="middle" data-name="ClienteNaoEncontradoError" data-compartment="0">ClienteNaoEncontradoError</text></a>
+
+</g>
+</g>
+<g transform="translate(755, 217)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ClienteNaoEncontradoError" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ClienteNaoEncontradoError" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(755, 225)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ClienteNaoEncontradoError" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ClienteNaoEncontradoError" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="PlanoInvalidoError">
+<g fill="#eee8d5" stroke="#33322E" data-name="PlanoInvalidoError">
+<rect x="1028.0" y="185.0" height="48.0" width="162.0" data-name="PlanoInvalidoError"></rect>
+<path d="M1028.0 217.0 L1190.0 217.0" fill="none" data-name="PlanoInvalidoError"></path>
+<path d="M1028.0 225.0 L1190.0 225.0" fill="none" data-name="PlanoInvalidoError"></path>
+</g>
+<g transform="translate(1028, 185)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PlanoInvalidoError" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PlanoInvalidoError" data-compartment="0">
+<a id="src\shared\errors\PlanoErrors.ts.PlanoInvalidoError" xlink:href="src\shared\errors\PlanoErrors.ts"><text x="73.0" y="14.1" stroke="none" text-anchor="middle" data-name="PlanoInvalidoError" data-compartment="0">PlanoInvalidoError</text></a>
+
+</g>
+</g>
+<g transform="translate(1028, 217)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PlanoInvalidoError" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PlanoInvalidoError" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(1028, 225)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PlanoInvalidoError" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PlanoInvalidoError" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="PlanoNaoEncontradoError">
+<g fill="#eee8d5" stroke="#33322E" data-name="PlanoNaoEncontradoError">
+<rect x="1230.0" y="185.0" height="48.0" width="223.0" data-name="PlanoNaoEncontradoError"></rect>
+<path d="M1230.0 217.0 L1453.0 217.0" fill="none" data-name="PlanoNaoEncontradoError"></path>
+<path d="M1230.0 225.0 L1453.0 225.0" fill="none" data-name="PlanoNaoEncontradoError"></path>
+</g>
+<g transform="translate(1230, 185)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PlanoNaoEncontradoError" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PlanoNaoEncontradoError" data-compartment="0">
+<a id="src\shared\errors\PlanoErrors.ts.PlanoNaoEncontradoError" xlink:href="src\shared\errors\PlanoErrors.ts"><text x="103.5" y="14.1" stroke="none" text-anchor="middle" data-name="PlanoNaoEncontradoError" data-compartment="0">PlanoNaoEncontradoError</text></a>
+
+</g>
+</g>
+<g transform="translate(1230, 217)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PlanoNaoEncontradoError" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PlanoNaoEncontradoError" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(1230, 225)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PlanoNaoEncontradoError" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PlanoNaoEncontradoError" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="CustoMensalInvalidoError">
+<g fill="#eee8d5" stroke="#33322E" data-name="CustoMensalInvalidoError">
+<rect x="1493.0" y="185.0" height="48.0" width="220.0" data-name="CustoMensalInvalidoError"></rect>
+<path d="M1493.0 217.0 L1713.0 217.0" fill="none" data-name="CustoMensalInvalidoError"></path>
+<path d="M1493.0 225.0 L1713.0 225.0" fill="none" data-name="CustoMensalInvalidoError"></path>
+</g>
+<g transform="translate(1493, 185)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CustoMensalInvalidoError" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CustoMensalInvalidoError" data-compartment="0">
+<a id="src\shared\errors\ValueObjectsErrors.ts.CustoMensalInvalidoError" xlink:href="src\shared\errors\ValueObjectsErrors.ts"><text x="102.0" y="14.1" stroke="none" text-anchor="middle" data-name="CustoMensalInvalidoError" data-compartment="0">CustoMensalInvalidoError</text></a>
+
+</g>
+</g>
+<g transform="translate(1493, 217)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CustoMensalInvalidoError" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CustoMensalInvalidoError" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(1493, 225)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CustoMensalInvalidoError" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CustoMensalInvalidoError" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="PeriodoInvalidoError">
+<g fill="#eee8d5" stroke="#33322E" data-name="PeriodoInvalidoError">
+<rect x="1753.0" y="185.0" height="48.0" width="178.0" data-name="PeriodoInvalidoError"></rect>
+<path d="M1753.0 217.0 L1931.0 217.0" fill="none" data-name="PeriodoInvalidoError"></path>
+<path d="M1753.0 225.0 L1931.0 225.0" fill="none" data-name="PeriodoInvalidoError"></path>
+</g>
+<g transform="translate(1753, 185)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PeriodoInvalidoError" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PeriodoInvalidoError" data-compartment="0">
+<a id="src\shared\errors\ValueObjectsErrors.ts.PeriodoInvalidoError" xlink:href="src\shared\errors\ValueObjectsErrors.ts"><text x="81.0" y="14.1" stroke="none" text-anchor="middle" data-name="PeriodoInvalidoError" data-compartment="0">PeriodoInvalidoError</text></a>
+
+</g>
+</g>
+<g transform="translate(1753, 217)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PeriodoInvalidoError" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PeriodoInvalidoError" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(1753, 225)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PeriodoInvalidoError" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PeriodoInvalidoError" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="Result&lt;T&gt;">
+<g fill="#eee8d5" stroke="#33322E" data-name="Result&lt;T&gt;">
+<rect x="1087.8" y="0.0" height="145.0" width="198.0" data-name="Result&lt;T&gt;"></rect>
+<path d="M1087.8 32.0 L1285.8 32.0" fill="none" data-name="Result&lt;T&gt;"></path>
+<path d="M1087.8 97.0 L1285.8 97.0" fill="none" data-name="Result&lt;T&gt;"></path>
+</g>
+<g transform="translate(1087.75, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Result&lt;T&gt;" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Result&lt;T&gt;" data-compartment="0">
+<a id="src\shared\result\Result.ts.Result&lt;T&gt;" xlink:href="src\shared\result\Result.ts"><text x="91.0" y="14.1" stroke="none" text-anchor="middle" data-name="Result&lt;T&gt;" data-compartment="0">Result&lt;T&gt;</text></a>
+
+</g>
+</g>
+<g transform="translate(1087.75, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Result&lt;T&gt;" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Result&lt;T&gt;" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Result&lt;T&gt;" data-compartment="1">+isSuccess: boolean</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Result&lt;T&gt;" data-compartment="1">+error?: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Result&lt;T&gt;" data-compartment="1">+value?: T</text>
+
+</g>
+</g>
+<g transform="translate(1087.75, 97)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Result&lt;T&gt;" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Result&lt;T&gt;" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="Result&lt;T&gt;" data-compartment="2">+static ok(): Result&lt;T&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Result&lt;T&gt;" data-compartment="2">+static fail(): Result&lt;T&gt;</text>
+
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

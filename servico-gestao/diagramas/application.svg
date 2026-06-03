@@ -1,0 +1,624 @@
+<svg version="1.1" baseProfile="full" width="6511.0" height="386.0" viewBox="0 0 6511 386" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<desc >#.interface: fill=lightblue
+#.enumeration: fill=lightgreen
+#.type: fill=lightgray
+
+[&lt;interface&gt;AssinaturaResponseDTO|+codigo: bigint;+codCli: bigint;+codPlano: bigint;+custoFinal: number;+descricao: string;+inicioFidelidade: Date;+fimFidelidade: Date;+dataUltimoPagamento: Date;+status: string;+emFidelidade: boolean|]
+[&lt;interface&gt;AtualizarPlanoDTO|+codigo: bigint;+custoMensal: number|]
+[&lt;interface&gt;ClienteResponseDTO|+codigo: bigint;+nome: string;+email: string|]
+[&lt;interface&gt;CriarAssinaturaDTO|+codCli: bigint;+codPlano: bigint;+custoFinal: number;+descricao: string|]
+[&lt;interface&gt;ListarAssinaturasDTO|+tipo: TipoListagemAssinatura|]
+[&lt;interface&gt;PlanoResponseDTO|+codigo: bigint;+nome: string;+custoMensal: number;+descricao: string;+data: Date|]
+[&lt;interface&gt;IAssinaturaRepository||+save(): Promise&lt;Assinatura&gt;;+findAll(): Promise&lt;Assinatura\[\]&gt;;+findById(): Promise&lt;Assinatura \| null&gt;;+findByCliente(): Promise&lt;Assinatura\[\]&gt;;+findByPlano(): Promise&lt;Assinatura\[\]&gt;;+findByStatus(): Promise&lt;Assinatura\[\]&gt;]
+[&lt;interface&gt;IClienteRepository||+findAll(): Promise&lt;Cliente\[\]&gt;;+findById(): Promise&lt;Cliente \| null&gt;]
+[&lt;interface&gt;IDomainEvent|+eventName: string;+occurredAt: Date;+payload: Record&lt;string, unknown&gt;|]
+[&lt;interface&gt;IEventPublisher||+publish(): Promise&lt;void&gt;]
+[&lt;interface&gt;IPlanoRepository||+findAll(): Promise&lt;Plano\[\]&gt;;+findById(): Promise&lt;Plano \| null&gt;;+updateCustoMensal(): Promise&lt;Plano&gt;]
+[CriarAssinaturaUseCase|-assinaturaRepository: IAssinaturaRepository;-clienteRepository: IClienteRepository;-planoRepository: IPlanoRepository;-eventPublisher: IEventPublisher|+execute(): Promise&lt;AssinaturaResponseDTO&gt;;-toResponseDTO(): AssinaturaResponseDTO]
+[ListarAssinaturasPorClienteUseCase|-assinaturaRepository: IAssinaturaRepository;-clienteRepository: IClienteRepository|+execute(): Promise&lt;AssinaturaResponseDTO\[\]&gt;]
+[ListarAssinaturasPorPlanoUseCase|-assinaturaRepository: IAssinaturaRepository;-planoRepository: IPlanoRepository|+execute(): Promise&lt;AssinaturaResponseDTO\[\]&gt;]
+[ListarTodosStrategy||+executar(): Promise&lt;Assinatura\[\]&gt;]
+[ListarAtivosStrategy||+executar(): Promise&lt;Assinatura\[\]&gt;]
+[ListarCanceladosStrategy||+executar(): Promise&lt;Assinatura\[\]&gt;]
+[ListarAssinaturasPorTipoUseCase|-assinaturaRepository: IAssinaturaRepository|+execute(): Promise&lt;AssinaturaResponseDTO\[\]&gt;]
+[&lt;interface&gt;IListagemStrategy||+executar(): Promise&lt;Assinatura\[\]&gt;]
+[IListagemStrategy]&lt;:--[ListarTodosStrategy]
+[IListagemStrategy]&lt;:--[ListarAtivosStrategy]
+[IListagemStrategy]&lt;:--[ListarCanceladosStrategy]
+[ListarClientesUseCase|-clienteRepository: IClienteRepository|+execute(): Promise&lt;ClienteResponseDTO\[\]&gt;]
+[AtualizarCustoPlanoUseCase|-planoRepository: IPlanoRepository|+execute(): Promise&lt;PlanoResponseDTO&gt;]
+[ListarPlanosUseCase|-planoRepository: IPlanoRepository|+execute(): Promise&lt;PlanoResponseDTO\[\]&gt;]</desc>
+<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
+<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+<g stroke="transparent" fill="transparent">
+<rect x="0.0" y="0.0" height="386.0" width="6511.0" stroke="none"></rect>
+</g>
+<g transform="translate(8, 8)" fill="#33322E">
+<g transform="translate(20, 20)" fill="#eee8d5" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+<g stroke-dasharray="6 6">
+<path d="M4986.6 149.8 L4757.5 238 L4757.5 258 L4757.5 258.0 " fill="none"></path>
+</g>
+<path d="M4988.5 154.8 L4986.6 149.8 L4984.7 144.8 L4999.0 145.0 Z"></path>
+<g stroke-dasharray="6 6">
+<path d="M5092.5 158.3 L5092.5 238 L5092.5 258 L5092.5 258.0 " fill="none"></path>
+</g>
+<path d="M5097.8 158.3 L5092.5 158.3 L5087.2 158.3 L5092.5 145.0 Z"></path>
+<g stroke-dasharray="6 6">
+<path d="M5198.4 149.8 L5427.5 238 L5427.5 258 L5427.5 258.0 " fill="none"></path>
+</g>
+<path d="M5200.3 144.8 L5198.4 149.8 L5196.5 154.8 L5186.0 145.0 Z"></path>
+<g data-name="AssinaturaResponseDTO">
+<g fill="lightblue" stroke="#33322E" data-name="AssinaturaResponseDTO">
+<rect x="0.0" y="0.0" height="218.0" width="247.0" data-name="AssinaturaResponseDTO"></rect>
+<path d="M0.0 32.0 L247.0 32.0" fill="none" data-name="AssinaturaResponseDTO"></path>
+<path d="M0.0 210.0 L247.0 210.0" fill="none" data-name="AssinaturaResponseDTO"></path>
+</g>
+<g transform="translate(0, 0)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AssinaturaResponseDTO" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AssinaturaResponseDTO" data-compartment="0">
+<a id="src\application\dtos\AssinaturaResponseDTO.ts.AssinaturaResponseDTO" xlink:href="src\application\dtos\AssinaturaResponseDTO.ts"><text x="115.5" y="14.1" stroke="none" text-anchor="middle" data-name="AssinaturaResponseDTO" data-compartment="0">AssinaturaResponseDTO</text></a>
+
+</g>
+</g>
+<g transform="translate(0, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AssinaturaResponseDTO" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AssinaturaResponseDTO" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="AssinaturaResponseDTO" data-compartment="1">+codigo: bigint</text>
+<text x="0.0" y="30.3" stroke="none" data-name="AssinaturaResponseDTO" data-compartment="1">+codCli: bigint</text>
+<text x="0.0" y="46.5" stroke="none" data-name="AssinaturaResponseDTO" data-compartment="1">+codPlano: bigint</text>
+<text x="0.0" y="62.7" stroke="none" data-name="AssinaturaResponseDTO" data-compartment="1">+custoFinal: number</text>
+<text x="0.0" y="78.9" stroke="none" data-name="AssinaturaResponseDTO" data-compartment="1">+descricao: string</text>
+<text x="0.0" y="95.1" stroke="none" data-name="AssinaturaResponseDTO" data-compartment="1">+inicioFidelidade: Date</text>
+<text x="0.0" y="111.3" stroke="none" data-name="AssinaturaResponseDTO" data-compartment="1">+fimFidelidade: Date</text>
+<text x="0.0" y="127.5" stroke="none" data-name="AssinaturaResponseDTO" data-compartment="1">+dataUltimoPagamento: Date</text>
+<text x="0.0" y="143.7" stroke="none" data-name="AssinaturaResponseDTO" data-compartment="1">+status: string</text>
+<text x="0.0" y="159.9" stroke="none" data-name="AssinaturaResponseDTO" data-compartment="1">+emFidelidade: boolean</text>
+
+</g>
+</g>
+<g transform="translate(0, 210)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AssinaturaResponseDTO" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AssinaturaResponseDTO" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="AtualizarPlanoDTO">
+<g fill="lightblue" stroke="#33322E" data-name="AtualizarPlanoDTO">
+<rect x="287.0" y="65.0" height="88.0" width="196.0" data-name="AtualizarPlanoDTO"></rect>
+<path d="M287.0 97.0 L483.0 97.0" fill="none" data-name="AtualizarPlanoDTO"></path>
+<path d="M287.0 145.0 L483.0 145.0" fill="none" data-name="AtualizarPlanoDTO"></path>
+</g>
+<g transform="translate(287, 65)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AtualizarPlanoDTO" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AtualizarPlanoDTO" data-compartment="0">
+<a id="src\application\dtos\AtualizarPlanoDTO.ts.AtualizarPlanoDTO" xlink:href="src\application\dtos\AtualizarPlanoDTO.ts"><text x="90.0" y="14.1" stroke="none" text-anchor="middle" data-name="AtualizarPlanoDTO" data-compartment="0">AtualizarPlanoDTO</text></a>
+
+</g>
+</g>
+<g transform="translate(287, 97)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AtualizarPlanoDTO" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AtualizarPlanoDTO" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="AtualizarPlanoDTO" data-compartment="1">+codigo: bigint</text>
+<text x="0.0" y="30.3" stroke="none" data-name="AtualizarPlanoDTO" data-compartment="1">+custoMensal: number</text>
+
+</g>
+</g>
+<g transform="translate(287, 145)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AtualizarPlanoDTO" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AtualizarPlanoDTO" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="ClienteResponseDTO">
+<g fill="lightblue" stroke="#33322E" data-name="ClienteResponseDTO">
+<rect x="523.0" y="56.5" height="105.0" width="186.0" data-name="ClienteResponseDTO"></rect>
+<path d="M523.0 88.5 L709.0 88.5" fill="none" data-name="ClienteResponseDTO"></path>
+<path d="M523.0 153.5 L709.0 153.5" fill="none" data-name="ClienteResponseDTO"></path>
+</g>
+<g transform="translate(523, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ClienteResponseDTO" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ClienteResponseDTO" data-compartment="0">
+<a id="src\application\dtos\ClienteResponseDTO.ts.ClienteResponseDTO" xlink:href="src\application\dtos\ClienteResponseDTO.ts"><text x="85.0" y="14.1" stroke="none" text-anchor="middle" data-name="ClienteResponseDTO" data-compartment="0">ClienteResponseDTO</text></a>
+
+</g>
+</g>
+<g transform="translate(523, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ClienteResponseDTO" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ClienteResponseDTO" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ClienteResponseDTO" data-compartment="1">+codigo: bigint</text>
+<text x="0.0" y="30.3" stroke="none" data-name="ClienteResponseDTO" data-compartment="1">+nome: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="ClienteResponseDTO" data-compartment="1">+email: string</text>
+
+</g>
+</g>
+<g transform="translate(523, 153.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ClienteResponseDTO" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ClienteResponseDTO" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="CriarAssinaturaDTO">
+<g fill="lightblue" stroke="#33322E" data-name="CriarAssinaturaDTO">
+<rect x="749.0" y="48.5" height="121.0" width="177.0" data-name="CriarAssinaturaDTO"></rect>
+<path d="M749.0 80.5 L926.0 80.5" fill="none" data-name="CriarAssinaturaDTO"></path>
+<path d="M749.0 161.5 L926.0 161.5" fill="none" data-name="CriarAssinaturaDTO"></path>
+</g>
+<g transform="translate(749, 48.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CriarAssinaturaDTO" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CriarAssinaturaDTO" data-compartment="0">
+<a id="src\application\dtos\CriarAssinaturaDTO.ts.CriarAssinaturaDTO" xlink:href="src\application\dtos\CriarAssinaturaDTO.ts"><text x="80.5" y="14.1" stroke="none" text-anchor="middle" data-name="CriarAssinaturaDTO" data-compartment="0">CriarAssinaturaDTO</text></a>
+
+</g>
+</g>
+<g transform="translate(749, 80.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CriarAssinaturaDTO" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CriarAssinaturaDTO" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CriarAssinaturaDTO" data-compartment="1">+codCli: bigint</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CriarAssinaturaDTO" data-compartment="1">+codPlano: bigint</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CriarAssinaturaDTO" data-compartment="1">+custoFinal: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="CriarAssinaturaDTO" data-compartment="1">+descricao: string</text>
+
+</g>
+</g>
+<g transform="translate(749, 161.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CriarAssinaturaDTO" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CriarAssinaturaDTO" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="ListarAssinaturasDTO">
+<g fill="lightblue" stroke="#33322E" data-name="ListarAssinaturasDTO">
+<rect x="966.0" y="73.0" height="72.0" width="255.0" data-name="ListarAssinaturasDTO"></rect>
+<path d="M966.0 105.0 L1221.0 105.0" fill="none" data-name="ListarAssinaturasDTO"></path>
+<path d="M966.0 137.0 L1221.0 137.0" fill="none" data-name="ListarAssinaturasDTO"></path>
+</g>
+<g transform="translate(966, 73)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarAssinaturasDTO" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ListarAssinaturasDTO" data-compartment="0">
+<a id="src\application\dtos\ListarAssinaturasDTO.ts.ListarAssinaturasDTO" xlink:href="src\application\dtos\ListarAssinaturasDTO.ts"><text x="119.5" y="14.1" stroke="none" text-anchor="middle" data-name="ListarAssinaturasDTO" data-compartment="0">ListarAssinaturasDTO</text></a>
+
+</g>
+</g>
+<g transform="translate(966, 105)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarAssinaturasDTO" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarAssinaturasDTO" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarAssinaturasDTO" data-compartment="1">+tipo: TipoListagemAssinatura</text>
+
+</g>
+</g>
+<g transform="translate(966, 137)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarAssinaturasDTO" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ListarAssinaturasDTO" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="PlanoResponseDTO">
+<g fill="lightblue" stroke="#33322E" data-name="PlanoResponseDTO">
+<rect x="1261.0" y="40.5" height="137.0" width="196.0" data-name="PlanoResponseDTO"></rect>
+<path d="M1261.0 72.5 L1457.0 72.5" fill="none" data-name="PlanoResponseDTO"></path>
+<path d="M1261.0 169.5 L1457.0 169.5" fill="none" data-name="PlanoResponseDTO"></path>
+</g>
+<g transform="translate(1261, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PlanoResponseDTO" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PlanoResponseDTO" data-compartment="0">
+<a id="src\application\dtos\PlanoResponseDTO.ts.PlanoResponseDTO" xlink:href="src\application\dtos\PlanoResponseDTO.ts"><text x="90.0" y="14.1" stroke="none" text-anchor="middle" data-name="PlanoResponseDTO" data-compartment="0">PlanoResponseDTO</text></a>
+
+</g>
+</g>
+<g transform="translate(1261, 72.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PlanoResponseDTO" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PlanoResponseDTO" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="PlanoResponseDTO" data-compartment="1">+codigo: bigint</text>
+<text x="0.0" y="30.3" stroke="none" data-name="PlanoResponseDTO" data-compartment="1">+nome: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="PlanoResponseDTO" data-compartment="1">+custoMensal: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="PlanoResponseDTO" data-compartment="1">+descricao: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="PlanoResponseDTO" data-compartment="1">+data: Date</text>
+
+</g>
+</g>
+<g transform="translate(1261, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PlanoResponseDTO" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PlanoResponseDTO" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="IAssinaturaRepository">
+<g fill="lightblue" stroke="#33322E" data-name="IAssinaturaRepository">
+<rect x="1497.0" y="32.5" height="153.0" width="330.0" data-name="IAssinaturaRepository"></rect>
+<path d="M1497.0 64.5 L1827.0 64.5" fill="none" data-name="IAssinaturaRepository"></path>
+<path d="M1497.0 72.5 L1827.0 72.5" fill="none" data-name="IAssinaturaRepository"></path>
+</g>
+<g transform="translate(1497, 32.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IAssinaturaRepository" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IAssinaturaRepository" data-compartment="0">
+<a id="src\application\ports\IAssinaturaRepository.ts.IAssinaturaRepository" xlink:href="src\application\ports\IAssinaturaRepository.ts"><text x="157.0" y="14.1" stroke="none" text-anchor="middle" data-name="IAssinaturaRepository" data-compartment="0">IAssinaturaRepository</text></a>
+
+</g>
+</g>
+<g transform="translate(1497, 64.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IAssinaturaRepository" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="IAssinaturaRepository" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(1497, 72.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IAssinaturaRepository" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="IAssinaturaRepository" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="IAssinaturaRepository" data-compartment="2">+save(): Promise&lt;Assinatura&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="IAssinaturaRepository" data-compartment="2">+findAll(): Promise&lt;Assinatura[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="IAssinaturaRepository" data-compartment="2">+findById(): Promise&lt;Assinatura | null&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="IAssinaturaRepository" data-compartment="2">+findByCliente(): Promise&lt;Assinatura[]&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="IAssinaturaRepository" data-compartment="2">+findByPlano(): Promise&lt;Assinatura[]&gt;</text>
+<text x="0.0" y="95.1" stroke="none" data-name="IAssinaturaRepository" data-compartment="2">+findByStatus(): Promise&lt;Assinatura[]&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="IClienteRepository">
+<g fill="lightblue" stroke="#33322E" data-name="IClienteRepository">
+<rect x="1867.0" y="65.0" height="88.0" width="294.0" data-name="IClienteRepository"></rect>
+<path d="M1867.0 97.0 L2161.0 97.0" fill="none" data-name="IClienteRepository"></path>
+<path d="M1867.0 105.0 L2161.0 105.0" fill="none" data-name="IClienteRepository"></path>
+</g>
+<g transform="translate(1867, 65)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IClienteRepository" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IClienteRepository" data-compartment="0">
+<a id="src\application\ports\IClienteRepository.ts.IClienteRepository" xlink:href="src\application\ports\IClienteRepository.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="IClienteRepository" data-compartment="0">IClienteRepository</text></a>
+
+</g>
+</g>
+<g transform="translate(1867, 97)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IClienteRepository" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="IClienteRepository" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(1867, 105)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IClienteRepository" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="IClienteRepository" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="IClienteRepository" data-compartment="2">+findAll(): Promise&lt;Cliente[]&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="IClienteRepository" data-compartment="2">+findById(): Promise&lt;Cliente | null&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="IDomainEvent">
+<g fill="lightblue" stroke="#33322E" data-name="IDomainEvent">
+<rect x="2201.0" y="56.5" height="105.0" width="301.0" data-name="IDomainEvent"></rect>
+<path d="M2201.0 88.5 L2502.0 88.5" fill="none" data-name="IDomainEvent"></path>
+<path d="M2201.0 153.5 L2502.0 153.5" fill="none" data-name="IDomainEvent"></path>
+</g>
+<g transform="translate(2201, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IDomainEvent" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IDomainEvent" data-compartment="0">
+<a id="src\application\ports\IEventPublisher.ts.IDomainEvent" xlink:href="src\application\ports\IEventPublisher.ts"><text x="142.5" y="14.1" stroke="none" text-anchor="middle" data-name="IDomainEvent" data-compartment="0">IDomainEvent</text></a>
+
+</g>
+</g>
+<g transform="translate(2201, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IDomainEvent" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="IDomainEvent" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="IDomainEvent" data-compartment="1">+eventName: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="IDomainEvent" data-compartment="1">+occurredAt: Date</text>
+<text x="0.0" y="46.5" stroke="none" data-name="IDomainEvent" data-compartment="1">+payload: Record&lt;string, unknown&gt;</text>
+
+</g>
+</g>
+<g transform="translate(2201, 153.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IDomainEvent" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="IDomainEvent" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="IEventPublisher">
+<g fill="lightblue" stroke="#33322E" data-name="IEventPublisher">
+<rect x="2542.0" y="73.0" height="72.0" width="222.0" data-name="IEventPublisher"></rect>
+<path d="M2542.0 105.0 L2764.0 105.0" fill="none" data-name="IEventPublisher"></path>
+<path d="M2542.0 113.0 L2764.0 113.0" fill="none" data-name="IEventPublisher"></path>
+</g>
+<g transform="translate(2542, 73)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IEventPublisher" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IEventPublisher" data-compartment="0">
+<a id="src\application\ports\IEventPublisher.ts.IEventPublisher" xlink:href="src\application\ports\IEventPublisher.ts"><text x="103.0" y="14.1" stroke="none" text-anchor="middle" data-name="IEventPublisher" data-compartment="0">IEventPublisher</text></a>
+
+</g>
+</g>
+<g transform="translate(2542, 105)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IEventPublisher" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="IEventPublisher" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(2542, 113)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IEventPublisher" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="IEventPublisher" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="IEventPublisher" data-compartment="2">+publish(): Promise&lt;void&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="IPlanoRepository">
+<g fill="lightblue" stroke="#33322E" data-name="IPlanoRepository">
+<rect x="2804.0" y="56.5" height="105.0" width="335.0" data-name="IPlanoRepository"></rect>
+<path d="M2804.0 88.5 L3139.0 88.5" fill="none" data-name="IPlanoRepository"></path>
+<path d="M2804.0 96.5 L3139.0 96.5" fill="none" data-name="IPlanoRepository"></path>
+</g>
+<g transform="translate(2804, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IPlanoRepository" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IPlanoRepository" data-compartment="0">
+<a id="src\application\ports\IPlanoRepository.ts.IPlanoRepository" xlink:href="src\application\ports\IPlanoRepository.ts"><text x="159.5" y="14.1" stroke="none" text-anchor="middle" data-name="IPlanoRepository" data-compartment="0">IPlanoRepository</text></a>
+
+</g>
+</g>
+<g transform="translate(2804, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IPlanoRepository" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="IPlanoRepository" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(2804, 96.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IPlanoRepository" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="IPlanoRepository" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="IPlanoRepository" data-compartment="2">+findAll(): Promise&lt;Plano[]&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="IPlanoRepository" data-compartment="2">+findById(): Promise&lt;Plano | null&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="IPlanoRepository" data-compartment="2">+updateCustoMensal(): Promise&lt;Plano&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="CriarAssinaturaUseCase">
+<g fill="#eee8d5" stroke="#33322E" data-name="CriarAssinaturaUseCase">
+<rect x="3179.0" y="28.5" height="161.0" width="394.0" data-name="CriarAssinaturaUseCase"></rect>
+<path d="M3179.0 60.5 L3573.0 60.5" fill="none" data-name="CriarAssinaturaUseCase"></path>
+<path d="M3179.0 141.5 L3573.0 141.5" fill="none" data-name="CriarAssinaturaUseCase"></path>
+</g>
+<g transform="translate(3179, 28.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CriarAssinaturaUseCase" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CriarAssinaturaUseCase" data-compartment="0">
+<a id="src\application\use-cases\assinatura\CriarAssinaturaUseCase.ts.CriarAssinaturaUseCase" xlink:href="src\application\use-cases\assinatura\CriarAssinaturaUseCase.ts"><text x="189.0" y="14.1" stroke="none" text-anchor="middle" data-name="CriarAssinaturaUseCase" data-compartment="0">CriarAssinaturaUseCase</text></a>
+
+</g>
+</g>
+<g transform="translate(3179, 60.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CriarAssinaturaUseCase" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CriarAssinaturaUseCase" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CriarAssinaturaUseCase" data-compartment="1">-assinaturaRepository: IAssinaturaRepository</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CriarAssinaturaUseCase" data-compartment="1">-clienteRepository: IClienteRepository</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CriarAssinaturaUseCase" data-compartment="1">-planoRepository: IPlanoRepository</text>
+<text x="0.0" y="62.7" stroke="none" data-name="CriarAssinaturaUseCase" data-compartment="1">-eventPublisher: IEventPublisher</text>
+
+</g>
+</g>
+<g transform="translate(3179, 141.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CriarAssinaturaUseCase" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CriarAssinaturaUseCase" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="CriarAssinaturaUseCase" data-compartment="2">+execute(): Promise&lt;AssinaturaResponseDTO&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CriarAssinaturaUseCase" data-compartment="2">-toResponseDTO(): AssinaturaResponseDTO</text>
+
+</g>
+</g>
+</g>
+<g data-name="ListarAssinaturasPorClienteUseCase">
+<g fill="#eee8d5" stroke="#33322E" data-name="ListarAssinaturasPorClienteUseCase">
+<rect x="3613.0" y="53.0" height="112.0" width="404.0" data-name="ListarAssinaturasPorClienteUseCase"></rect>
+<path d="M3613.0 85.0 L4017.0 85.0" fill="none" data-name="ListarAssinaturasPorClienteUseCase"></path>
+<path d="M3613.0 133.0 L4017.0 133.0" fill="none" data-name="ListarAssinaturasPorClienteUseCase"></path>
+</g>
+<g transform="translate(3613, 53)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ListarAssinaturasPorClienteUseCase" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ListarAssinaturasPorClienteUseCase" data-compartment="0">
+<a id="src\application\use-cases\assinatura\ListarAssinaturasPorClienteUseCase.ts.ListarAssinaturasPorClienteUseCase" xlink:href="src\application\use-cases\assinatura\ListarAssinaturasPorClienteUseCase.ts"><text x="194.0" y="14.1" stroke="none" text-anchor="middle" data-name="ListarAssinaturasPorClienteUseCase" data-compartment="0">ListarAssinaturasPorClienteUseCase</text></a>
+
+</g>
+</g>
+<g transform="translate(3613, 85)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarAssinaturasPorClienteUseCase" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarAssinaturasPorClienteUseCase" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarAssinaturasPorClienteUseCase" data-compartment="1">-assinaturaRepository: IAssinaturaRepository</text>
+<text x="0.0" y="30.3" stroke="none" data-name="ListarAssinaturasPorClienteUseCase" data-compartment="1">-clienteRepository: IClienteRepository</text>
+
+</g>
+</g>
+<g transform="translate(3613, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarAssinaturasPorClienteUseCase" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarAssinaturasPorClienteUseCase" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarAssinaturasPorClienteUseCase" data-compartment="2">+execute(): Promise&lt;AssinaturaResponseDTO[]&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ListarAssinaturasPorPlanoUseCase">
+<g fill="#eee8d5" stroke="#33322E" data-name="ListarAssinaturasPorPlanoUseCase">
+<rect x="4057.0" y="53.0" height="112.0" width="404.0" data-name="ListarAssinaturasPorPlanoUseCase"></rect>
+<path d="M4057.0 85.0 L4461.0 85.0" fill="none" data-name="ListarAssinaturasPorPlanoUseCase"></path>
+<path d="M4057.0 133.0 L4461.0 133.0" fill="none" data-name="ListarAssinaturasPorPlanoUseCase"></path>
+</g>
+<g transform="translate(4057, 53)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ListarAssinaturasPorPlanoUseCase" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ListarAssinaturasPorPlanoUseCase" data-compartment="0">
+<a id="src\application\use-cases\assinatura\ListarAssinaturasPorPlanoUseCase.ts.ListarAssinaturasPorPlanoUseCase" xlink:href="src\application\use-cases\assinatura\ListarAssinaturasPorPlanoUseCase.ts"><text x="194.0" y="14.1" stroke="none" text-anchor="middle" data-name="ListarAssinaturasPorPlanoUseCase" data-compartment="0">ListarAssinaturasPorPlanoUseCase</text></a>
+
+</g>
+</g>
+<g transform="translate(4057, 85)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarAssinaturasPorPlanoUseCase" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarAssinaturasPorPlanoUseCase" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarAssinaturasPorPlanoUseCase" data-compartment="1">-assinaturaRepository: IAssinaturaRepository</text>
+<text x="0.0" y="30.3" stroke="none" data-name="ListarAssinaturasPorPlanoUseCase" data-compartment="1">-planoRepository: IPlanoRepository</text>
+
+</g>
+</g>
+<g transform="translate(4057, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarAssinaturasPorPlanoUseCase" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarAssinaturasPorPlanoUseCase" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarAssinaturasPorPlanoUseCase" data-compartment="2">+execute(): Promise&lt;AssinaturaResponseDTO[]&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ListarTodosStrategy">
+<g fill="#eee8d5" stroke="#33322E" data-name="ListarTodosStrategy">
+<rect x="4610.0" y="258.0" height="72.0" width="295.0" data-name="ListarTodosStrategy"></rect>
+<path d="M4610.0 290.0 L4905.0 290.0" fill="none" data-name="ListarTodosStrategy"></path>
+<path d="M4610.0 298.0 L4905.0 298.0" fill="none" data-name="ListarTodosStrategy"></path>
+</g>
+<g transform="translate(4610, 258)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ListarTodosStrategy" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ListarTodosStrategy" data-compartment="0">
+<a id="src\application\use-cases\assinatura\ListarAssinaturasPorTipoUseCase.ts.ListarTodosStrategy" xlink:href="src\application\use-cases\assinatura\ListarAssinaturasPorTipoUseCase.ts"><text x="139.5" y="14.1" stroke="none" text-anchor="middle" data-name="ListarTodosStrategy" data-compartment="0">ListarTodosStrategy</text></a>
+
+</g>
+</g>
+<g transform="translate(4610, 290)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarTodosStrategy" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ListarTodosStrategy" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(4610, 298)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarTodosStrategy" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarTodosStrategy" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarTodosStrategy" data-compartment="2">+executar(): Promise&lt;Assinatura[]&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ListarAtivosStrategy">
+<g fill="#eee8d5" stroke="#33322E" data-name="ListarAtivosStrategy">
+<rect x="4945.0" y="258.0" height="72.0" width="295.0" data-name="ListarAtivosStrategy"></rect>
+<path d="M4945.0 290.0 L5240.0 290.0" fill="none" data-name="ListarAtivosStrategy"></path>
+<path d="M4945.0 298.0 L5240.0 298.0" fill="none" data-name="ListarAtivosStrategy"></path>
+</g>
+<g transform="translate(4945, 258)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ListarAtivosStrategy" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ListarAtivosStrategy" data-compartment="0">
+<a id="src\application\use-cases\assinatura\ListarAssinaturasPorTipoUseCase.ts.ListarAtivosStrategy" xlink:href="src\application\use-cases\assinatura\ListarAssinaturasPorTipoUseCase.ts"><text x="139.5" y="14.1" stroke="none" text-anchor="middle" data-name="ListarAtivosStrategy" data-compartment="0">ListarAtivosStrategy</text></a>
+
+</g>
+</g>
+<g transform="translate(4945, 290)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarAtivosStrategy" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ListarAtivosStrategy" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(4945, 298)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarAtivosStrategy" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarAtivosStrategy" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarAtivosStrategy" data-compartment="2">+executar(): Promise&lt;Assinatura[]&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ListarCanceladosStrategy">
+<g fill="#eee8d5" stroke="#33322E" data-name="ListarCanceladosStrategy">
+<rect x="5280.0" y="258.0" height="72.0" width="295.0" data-name="ListarCanceladosStrategy"></rect>
+<path d="M5280.0 290.0 L5575.0 290.0" fill="none" data-name="ListarCanceladosStrategy"></path>
+<path d="M5280.0 298.0 L5575.0 298.0" fill="none" data-name="ListarCanceladosStrategy"></path>
+</g>
+<g transform="translate(5280, 258)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ListarCanceladosStrategy" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ListarCanceladosStrategy" data-compartment="0">
+<a id="src\application\use-cases\assinatura\ListarAssinaturasPorTipoUseCase.ts.ListarCanceladosStrategy" xlink:href="src\application\use-cases\assinatura\ListarAssinaturasPorTipoUseCase.ts"><text x="139.5" y="14.1" stroke="none" text-anchor="middle" data-name="ListarCanceladosStrategy" data-compartment="0">ListarCanceladosStrategy</text></a>
+
+</g>
+</g>
+<g transform="translate(5280, 290)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarCanceladosStrategy" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ListarCanceladosStrategy" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(5280, 298)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarCanceladosStrategy" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarCanceladosStrategy" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarCanceladosStrategy" data-compartment="2">+executar(): Promise&lt;Assinatura[]&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ListarAssinaturasPorTipoUseCase">
+<g fill="#eee8d5" stroke="#33322E" data-name="ListarAssinaturasPorTipoUseCase">
+<rect x="4501.0" y="61.0" height="96.0" width="404.0" data-name="ListarAssinaturasPorTipoUseCase"></rect>
+<path d="M4501.0 93.0 L4905.0 93.0" fill="none" data-name="ListarAssinaturasPorTipoUseCase"></path>
+<path d="M4501.0 125.0 L4905.0 125.0" fill="none" data-name="ListarAssinaturasPorTipoUseCase"></path>
+</g>
+<g transform="translate(4501, 61)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ListarAssinaturasPorTipoUseCase" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ListarAssinaturasPorTipoUseCase" data-compartment="0">
+<a id="src\application\use-cases\assinatura\ListarAssinaturasPorTipoUseCase.ts.ListarAssinaturasPorTipoUseCase" xlink:href="src\application\use-cases\assinatura\ListarAssinaturasPorTipoUseCase.ts"><text x="194.0" y="14.1" stroke="none" text-anchor="middle" data-name="ListarAssinaturasPorTipoUseCase" data-compartment="0">ListarAssinaturasPorTipoUseCase</text></a>
+
+</g>
+</g>
+<g transform="translate(4501, 93)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarAssinaturasPorTipoUseCase" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarAssinaturasPorTipoUseCase" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarAssinaturasPorTipoUseCase" data-compartment="1">-assinaturaRepository: IAssinaturaRepository</text>
+
+</g>
+</g>
+<g transform="translate(4501, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarAssinaturasPorTipoUseCase" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarAssinaturasPorTipoUseCase" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarAssinaturasPorTipoUseCase" data-compartment="2">+execute(): Promise&lt;AssinaturaResponseDTO[]&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="IListagemStrategy">
+<g fill="lightblue" stroke="#33322E" data-name="IListagemStrategy">
+<rect x="4945.0" y="73.0" height="72.0" width="295.0" data-name="IListagemStrategy"></rect>
+<path d="M4945.0 105.0 L5240.0 105.0" fill="none" data-name="IListagemStrategy"></path>
+<path d="M4945.0 113.0 L5240.0 113.0" fill="none" data-name="IListagemStrategy"></path>
+</g>
+<g transform="translate(4945, 73)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IListagemStrategy" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="IListagemStrategy" data-compartment="0">
+<a id="src\application\use-cases\assinatura\ListarAssinaturasPorTipoUseCase.ts.IListagemStrategy" xlink:href="src\application\use-cases\assinatura\ListarAssinaturasPorTipoUseCase.ts"><text x="139.5" y="14.1" stroke="none" text-anchor="middle" data-name="IListagemStrategy" data-compartment="0">IListagemStrategy</text></a>
+
+</g>
+</g>
+<g transform="translate(4945, 105)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IListagemStrategy" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="IListagemStrategy" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(4945, 113)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="IListagemStrategy" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="IListagemStrategy" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="IListagemStrategy" data-compartment="2">+executar(): Promise&lt;Assinatura[]&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ListarClientesUseCase">
+<g fill="#eee8d5" stroke="#33322E" data-name="ListarClientesUseCase">
+<rect x="5280.0" y="61.0" height="96.0" width="375.0" data-name="ListarClientesUseCase"></rect>
+<path d="M5280.0 93.0 L5655.0 93.0" fill="none" data-name="ListarClientesUseCase"></path>
+<path d="M5280.0 125.0 L5655.0 125.0" fill="none" data-name="ListarClientesUseCase"></path>
+</g>
+<g transform="translate(5280, 61)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ListarClientesUseCase" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ListarClientesUseCase" data-compartment="0">
+<a id="src\application\use-cases\cliente\ListarClientesUseCase.ts.ListarClientesUseCase" xlink:href="src\application\use-cases\cliente\ListarClientesUseCase.ts"><text x="179.5" y="14.1" stroke="none" text-anchor="middle" data-name="ListarClientesUseCase" data-compartment="0">ListarClientesUseCase</text></a>
+
+</g>
+</g>
+<g transform="translate(5280, 93)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarClientesUseCase" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarClientesUseCase" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarClientesUseCase" data-compartment="1">-clienteRepository: IClienteRepository</text>
+
+</g>
+</g>
+<g transform="translate(5280, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarClientesUseCase" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarClientesUseCase" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarClientesUseCase" data-compartment="2">+execute(): Promise&lt;ClienteResponseDTO[]&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="AtualizarCustoPlanoUseCase">
+<g fill="#eee8d5" stroke="#33322E" data-name="AtualizarCustoPlanoUseCase">
+<rect x="5695.0" y="61.0" height="96.0" width="355.0" data-name="AtualizarCustoPlanoUseCase"></rect>
+<path d="M5695.0 93.0 L6050.0 93.0" fill="none" data-name="AtualizarCustoPlanoUseCase"></path>
+<path d="M5695.0 125.0 L6050.0 125.0" fill="none" data-name="AtualizarCustoPlanoUseCase"></path>
+</g>
+<g transform="translate(5695, 61)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AtualizarCustoPlanoUseCase" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AtualizarCustoPlanoUseCase" data-compartment="0">
+<a id="src\application\use-cases\plano\AtualizarCustoPlanoUseCase.ts.AtualizarCustoPlanoUseCase" xlink:href="src\application\use-cases\plano\AtualizarCustoPlanoUseCase.ts"><text x="169.5" y="14.1" stroke="none" text-anchor="middle" data-name="AtualizarCustoPlanoUseCase" data-compartment="0">AtualizarCustoPlanoUseCase</text></a>
+
+</g>
+</g>
+<g transform="translate(5695, 93)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AtualizarCustoPlanoUseCase" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AtualizarCustoPlanoUseCase" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="AtualizarCustoPlanoUseCase" data-compartment="1">-planoRepository: IPlanoRepository</text>
+
+</g>
+</g>
+<g transform="translate(5695, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AtualizarCustoPlanoUseCase" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AtualizarCustoPlanoUseCase" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="AtualizarCustoPlanoUseCase" data-compartment="2">+execute(): Promise&lt;PlanoResponseDTO&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ListarPlanosUseCase">
+<g fill="#eee8d5" stroke="#33322E" data-name="ListarPlanosUseCase">
+<rect x="6090.0" y="61.0" height="96.0" width="365.0" data-name="ListarPlanosUseCase"></rect>
+<path d="M6090.0 93.0 L6455.0 93.0" fill="none" data-name="ListarPlanosUseCase"></path>
+<path d="M6090.0 125.0 L6455.0 125.0" fill="none" data-name="ListarPlanosUseCase"></path>
+</g>
+<g transform="translate(6090, 61)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ListarPlanosUseCase" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ListarPlanosUseCase" data-compartment="0">
+<a id="src\application\use-cases\plano\ListarPlanosUseCase.ts.ListarPlanosUseCase" xlink:href="src\application\use-cases\plano\ListarPlanosUseCase.ts"><text x="174.5" y="14.1" stroke="none" text-anchor="middle" data-name="ListarPlanosUseCase" data-compartment="0">ListarPlanosUseCase</text></a>
+
+</g>
+</g>
+<g transform="translate(6090, 93)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarPlanosUseCase" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarPlanosUseCase" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarPlanosUseCase" data-compartment="1">-planoRepository: IPlanoRepository</text>
+
+</g>
+</g>
+<g transform="translate(6090, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ListarPlanosUseCase" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ListarPlanosUseCase" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ListarPlanosUseCase" data-compartment="2">+execute(): Promise&lt;PlanoResponseDTO[]&gt;</text>
+
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
