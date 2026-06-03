@@ -483,7 +483,7 @@ npm install
 
 ### 3. Configurar variáveis de ambiente
 
-O projeto já contém um arquivo `.env` configurado:
+Caso ja nao possua, crie um arquivo `.env` configurado com o seguinte conteudo:
 
 ```env
 DATABASE_URL="postgresql://postgres:senha123@localhost:5432/servico_gestao"
