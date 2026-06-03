@@ -45,6 +45,8 @@ O sistema adota uma **Arquitetura Híbrida** composta por uma API Gateway como p
 ## Diagrama de Classes
 
 ```mermaid
+classDiagram
+
 class AppModule{
             
             
