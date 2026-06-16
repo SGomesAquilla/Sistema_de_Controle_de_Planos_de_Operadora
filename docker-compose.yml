@@ -1,6 +1,10 @@
 version: '3.8'
 
 services:
+
+  # =====================
+  # BANCO DE DADOS
+  # =====================
   postgres-gestao:
     image: postgres:15
     container_name: postgres-gestao
@@ -12,6 +16,69 @@ services:
       - '5432:5432'
     volumes:
       - postgres-gestao-data:/var/lib/postgresql/data
+    networks:
+      - backend-network
+  
+  postgress-faturamento:
+    image: postgres:15
+    container_name: postgres-faturamento
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senha123
+      POSTGRES_DB: servico_faturamento
+    ports:
+      - '5433:5432'
+    volumes:
+      - postgres-faturamento-data:/var/lib/postgresql/data
+    networks:
+      - backend-network
+
+# ===================
+# MESSAGE BROKER
+# ===================
+
+rabbitmq:
+  image: rabbitmq:3-management
+  container_name: rabbitmq
+  environment:
+    RABBITMQ_DEFAULT_USER: admin
+    RABBITMQ_DEFAULT_PASS: senha123
+  ports:
+    - '5672:5672' # porta AMQP
+    - '15672:15672' # porta management UI
+  volumes:
+    - rabbitmq-data:/var/lib/rabbitmq
+  networks:
+    - backend-network
+
+# ==================
+# CACHE
+# ==================
+
+redis:
+  image: redis:7
+  container_name: redis
+  ports:
+    - '6379:6379'
+  volumes:
+    - redis-data:/data
+  networks:
+    - backend-network
+
+# =================
+# VOLUMES
+# =================
 
 volumes:
   postgres-gestao-data:
+  postgres-faturamento-data:
+  rabbitmq-data:
+  redis-data:
+
+# ==================
+# REDES
+# ==================
+
+netowrs:
+  backend-network:
+    driver: bridge
