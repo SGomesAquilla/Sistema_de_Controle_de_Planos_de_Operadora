@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 
 @Injectable()
-export class PagamentpRepository {
+export class PagamentoRepository {
     private prisma: PrismaClient;
 
     constructor() {
