@@ -23,7 +23,7 @@ export class RabbitMQService implements OnModuleInit, OnModuleDestroy {
             throw new InternalServerError('RabbitMQ_URL nao definida')
         }
 
-        this.connection = amqp.connect(rabbitMQUrl)
+        this.connection = amqp.connect([rabbitMQUrl])
         this.channel = this.connection.createChannel({
             json: true,
             setup: async (channel: amqp.Channel) => {
