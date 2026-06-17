@@ -11,6 +11,7 @@ import { NoOpEventPublisher } from '../../infrastructure/container/NoOpEventPubl
 import { PrismaModule } from '../../infrastructure/database/prisma/PrismaModule';
 import { RabbitMQConsumerService } from '../../infrastructure/messaging/RabbitMQConsumerService';
 import { ProcessarPagamentoUseCase } from '../../application/use-cases/pagamento/ProcessarPagamentoUseCase'; 
+import { RabbitMQEventPublisher } from '../../infrastructure/messaging/RabbitMQEventPublisher';
 
 @Module({
   imports: [PrismaModule],
@@ -19,7 +20,7 @@ import { ProcessarPagamentoUseCase } from '../../application/use-cases/pagamento
     PrismaAssinaturaRepository,
     PrismaClienteRepository,
     PrismaPlanoRepository,
-    NoOpEventPublisher,
+    RabbitMQEventPublisher,
     RabbitMQConsumerService,
     {
       provide: CriarAssinaturaUseCase,
@@ -27,7 +28,7 @@ import { ProcessarPagamentoUseCase } from '../../application/use-cases/pagamento
         assinaturaRepo: PrismaAssinaturaRepository,
         clienteRepo: PrismaClienteRepository,
         planoRepo: PrismaPlanoRepository,
-        publisher: NoOpEventPublisher,
+        publisher: RabbitMQEventPublisher,
       ) =>
         new CriarAssinaturaUseCase(
           assinaturaRepo,
