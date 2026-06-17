@@ -1,10 +1,16 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { PagamentoController } from './controllers/PagamentoController';
+import { PagamentoService } from './services/PagamentoService';
+import { PagamentoRepository } from './repositories/PagamentoRepository';
+import { RabbitMQService } from './messaging/RabbitMQService';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [PagamentoController],
+  providers: [
+    PagamentoService,
+    PagamentoRepository,
+    RabbitMQService,
+  ],
 })
+
 export class AppModule {}
