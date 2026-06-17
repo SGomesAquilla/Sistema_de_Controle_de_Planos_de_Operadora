@@ -9,6 +9,8 @@ import { PrismaClienteRepository } from '../repositories/PrismaClienteRepository
 import { PrismaPlanoRepository } from '../repositories/PrismaPlanoRepository';
 import { NoOpEventPublisher } from '../../infrastructure/container/NoOpEventPublisher';
 import { PrismaModule } from '../../infrastructure/database/prisma/PrismaModule';
+import { RabbitMQConsumerService } from '../../infrastructure/messaging/RabbitMQConsumerService';
+import { ProcessarPagamentoUseCase } from '../../application/use-cases/pagamento/ProcessarPagamentoUseCase'; 
 
 @Module({
   imports: [PrismaModule],
@@ -62,6 +64,12 @@ import { PrismaModule } from '../../infrastructure/database/prisma/PrismaModule'
       ) =>
         new ListarAssinaturasPorPlanoUseCase(assinaturaRepo, planoRepo),
       inject: [PrismaAssinaturaRepository, PrismaPlanoRepository],
+    },
+    {
+      provide: ProcessarPagamentoUseCase,
+      useFactory: (repo: PrismaAssinaturaRepository) =>
+        new ProcessarPagamentoUseCase(repo),
+    inject: [PrismaAssinaturaRepository],
     },
   ],
 })
