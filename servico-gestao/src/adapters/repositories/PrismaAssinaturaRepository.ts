@@ -21,8 +21,9 @@ export class PrismaAssinaturaRepository implements IAssinaturaRepository {
   }
 
   async save(assinatura: Assinatura): Promise<Assinatura> {
-    const registro = await this.prisma.assinatura.create({
-      data: {
+    const registro = await this.prisma.assinatura.upsert({
+      where: { codigo: assinatura.codigo || 0n },
+      create: {
         codPlano: assinatura.codPlano,
         codCli: assinatura.codCli,
         inicioFidelidade: assinatura.inicioFidelidade,
@@ -30,6 +31,9 @@ export class PrismaAssinaturaRepository implements IAssinaturaRepository {
         dataUltimoPagamento: assinatura.dataUltimoPagamento,
         custoFinal: assinatura.custoFinal,
         descricao: assinatura.descricao,
+      },
+      update: {
+        dataUltimoPagamento: assinatura.dataUltimoPagamento,
       },
     });
     return this.toEntity(registro);
