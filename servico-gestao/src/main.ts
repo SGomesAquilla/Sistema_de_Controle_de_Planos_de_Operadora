@@ -10,6 +10,7 @@ async function bootstrap() {
     return this.toString();
   };
 
-  await app.listen(3000);
+  await app.listen(3001);
+  console.log('ServicoGestao rodando na porta 3001')
 }
 bootstrap();
