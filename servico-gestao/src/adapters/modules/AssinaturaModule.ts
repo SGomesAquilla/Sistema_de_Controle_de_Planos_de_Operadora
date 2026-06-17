@@ -20,6 +20,7 @@ import { ProcessarPagamentoUseCase } from '../../application/use-cases/pagamento
     PrismaClienteRepository,
     PrismaPlanoRepository,
     NoOpEventPublisher,
+    RabbitMQConsumerService,
     {
       provide: CriarAssinaturaUseCase,
       useFactory: (
