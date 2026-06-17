@@ -2,12 +2,16 @@ import { Injectable } from "@nestjs/common";
 import { PagamentoRepository } from "../repositories/PagamentoRepository";
 import { RabbitMQService } from "../messaging/RabbitMQService";
 
-export interface RegistrarPagamentoDTO {
-    dia: number;
-    mes: number;
-    ano: number;
-    codAss: number;
-    valorPago: number;
+// Por causa do jeito q o NestJS funciona, eu nao posso usar interfaces
+// entao tive que usar class no DTO abaixo e adicionar as "!"
+// Nesse caso em especifico nao ha problema em usar ! porque o
+// DTO eh "vazio" mesmo e vai ser preenchido dinamicamente mais tarde
+export class RegistrarPagamentoDTO {
+    dia!: number;
+    mes!: number;
+    ano!: number;
+    codAss!: number;
+    valorPago!: number;
 }
 
 @Injectable()
