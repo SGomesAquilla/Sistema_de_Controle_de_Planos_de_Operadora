@@ -13,8 +13,8 @@ export class RabbitMQService implements OnModuleInit, OnModuleDestroy {
     private channel!: ChannelWrapper;
 
     private readonly filas = [
-        'PagamentoPlanosServicoGestao',
-        'PagamentoPlanosServicoPlanosAtivos',
+        'PagamentoPlanoServicoGestao',
+        'PagamentoPlanoServicoPlanosAtivos',
     ];
 
     async onModuleInit(): Promise<void> {

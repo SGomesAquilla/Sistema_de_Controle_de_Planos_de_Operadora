@@ -7,7 +7,6 @@ import { ListarAssinaturasPorPlanoUseCase } from '../../application/use-cases/as
 import { PrismaAssinaturaRepository } from '../repositories/PrismaAssinaturaRepository';
 import { PrismaClienteRepository } from '../repositories/PrismaClienteRepository';
 import { PrismaPlanoRepository } from '../repositories/PrismaPlanoRepository';
-import { NoOpEventPublisher } from '../../infrastructure/container/NoOpEventPublisher';
 import { PrismaModule } from '../../infrastructure/database/prisma/PrismaModule';
 import { RabbitMQConsumerService } from '../../infrastructure/messaging/RabbitMQConsumerService';
 import { ProcessarPagamentoUseCase } from '../../application/use-cases/pagamento/ProcessarPagamentoUseCase'; 
@@ -40,7 +39,7 @@ import { RabbitMQEventPublisher } from '../../infrastructure/messaging/RabbitMQE
         PrismaAssinaturaRepository,
         PrismaClienteRepository,
         PrismaPlanoRepository,
-        NoOpEventPublisher,
+        RabbitMQEventPublisher,
       ],
     },
     {

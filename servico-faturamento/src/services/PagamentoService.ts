@@ -45,7 +45,7 @@ export class PagamentoService {
         );
 
         await this.rabbitMQService.publicar(
-            'PagamentoPlanoServicosAtivos',
+            'PagamentoPlanoServicoPlanosAtivos',
             payload,
         );
     }
