@@ -3,14 +3,12 @@ import Redis from 'ioredis';
 
 @Injectable()
 export class RedisService implements OnModuleDestroy {
+    private readonly redisUrl = process.env.REDIS_URL;
     private readonly client: Redis;
     private readonly TTL_SEGUNDOS = 300; // 5 minutos
     
     constructor() {
-        const redisUrl = process.env.REDIS_URL;
-        if (!redisUrl) { throw new InternalServerErrorException('REDIS_URL Indefinida') }
-
-        this.client = new Redis(redisUrl);
+        this.client = new Redis(`${this.redisUrl}`);
     }
 
     async get(codAss: string): Promise<boolean | null> {
