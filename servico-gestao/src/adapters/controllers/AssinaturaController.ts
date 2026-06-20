@@ -3,6 +3,7 @@ import { CriarAssinaturaUseCase } from '../../application/use-cases/assinatura/C
 import { ListarAssinaturasPorTipoUseCase } from '../../application/use-cases/assinatura/ListarAssinaturasPorTipoUseCase';
 import { ListarAssinaturasPorClienteUseCase } from '../../application/use-cases/assinatura/ListarAssinaturasPorClienteUseCase';
 import { ListarAssinaturasPorPlanoUseCase } from '../../application/use-cases/assinatura/ListarAssinaturasPorPlanoUseCase';
+import { ListarAssinaturaPorCodigoUseCase } from '../../application/use-cases/assinatura/ListarAssinaturaPorCodigoUseCase';
 import { TipoListagemAssinatura } from '../../application/dtos/ListarAssinaturasDTO';
 
 @Controller('gestao')
@@ -12,6 +13,7 @@ export class AssinaturaController {
     private readonly listarAssinaturasPorTipoUseCase: ListarAssinaturasPorTipoUseCase,
     private readonly listarAssinaturasPorClienteUseCase: ListarAssinaturasPorClienteUseCase,
     private readonly listarAssinaturasPorPlanoUseCase: ListarAssinaturasPorPlanoUseCase,
+    private readonly listarAssinaturaPorCodigoUseCase: ListarAssinaturaPorCodigoUseCase,
   ) {}
 
   @Post('assinaturas')
@@ -27,6 +29,11 @@ export class AssinaturaController {
       custoFinal: Number(custoFinal),
       descricao,
     });
+  }
+
+  @Get('assinaturas/:codigo')
+  async listarPorCodigo(@Param('codigo') codigo: string) {
+    return this.listarAssinaturaPorCodigoUseCase.execute(BigInt(codigo))
   }
 
   @Get('assinaturas/:tipo')

@@ -3,6 +3,7 @@ import { AssinaturaController } from '../controllers/AssinaturaController';
 import { CriarAssinaturaUseCase } from '../../application/use-cases/assinatura/CriarAssinaturaUseCase';
 import { ListarAssinaturasPorTipoUseCase } from '../../application/use-cases/assinatura/ListarAssinaturasPorTipoUseCase';
 import { ListarAssinaturasPorClienteUseCase } from '../../application/use-cases/assinatura/ListarAssinaturasPorClienteUseCase';
+import { ListarAssinaturaPorCodigoUseCase } from '../../application/use-cases/assinatura/ListarAssinaturaPorCodigoUseCase';
 import { ListarAssinaturasPorPlanoUseCase } from '../../application/use-cases/assinatura/ListarAssinaturasPorPlanoUseCase';
 import { PrismaAssinaturaRepository } from '../repositories/PrismaAssinaturaRepository';
 import { PrismaClienteRepository } from '../repositories/PrismaClienteRepository';
@@ -65,6 +66,12 @@ import { RabbitMQEventPublisher } from '../../infrastructure/messaging/RabbitMQE
       ) =>
         new ListarAssinaturasPorPlanoUseCase(assinaturaRepo, planoRepo),
       inject: [PrismaAssinaturaRepository, PrismaPlanoRepository],
+    },
+    {
+      provide: ListarAssinaturaPorCodigoUseCase,
+      useFactory: (repo: PrismaAssinaturaRepository) =>
+        new ListarAssinaturaPorCodigoUseCase(repo),
+      inject: [PrismaAssinaturaRepository],
     },
     {
       provide: ProcessarPagamentoUseCase,
