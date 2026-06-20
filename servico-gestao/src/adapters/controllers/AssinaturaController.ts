@@ -31,7 +31,7 @@ export class AssinaturaController {
     });
   }
 
-  @Get('assinaturas/:codigo')
+  @Get('assinaturas/codigo/:codigo')
   async listarPorCodigo(@Param('codigo') codigo: string) {
     return this.listarAssinaturaPorCodigoUseCase.execute(BigInt(codigo))
   }
