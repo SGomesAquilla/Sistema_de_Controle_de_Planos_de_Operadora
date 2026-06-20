@@ -31,19 +31,19 @@ export class PlanosAtivosService {
     }
 
     private async consultarServicoGestao(codAss: string): Promise<boolean> {
-        const response = await firstValueFrom(
-            this.httpService.get(`${this.servicoGestaoUrl}/gestao/assinaturas/TODOS`),
-        );
+        try {
+            const response = await firstValueFrom(
+                this.httpService.get(`${this.servicoGestaoUrl}/gestao/assinaturas/codigo/${codAss}`)
+            );
 
-        const assinatura = response.data.find(
-            (a: any) => a.codigo === codAss,
-        );
-
-        if (!assinatura) {
-            return false;
+            return response.data.status === 'ATIVO';
+        
+        } catch (error: any) {
+            if (error.response?.status === 404) {
+                return false;
+            }
+            throw error;
         }
-
-        return assinatura.status === 'ATIVO';
     }
 
     async invalidarCache(codAss: string): Promise<void> {
