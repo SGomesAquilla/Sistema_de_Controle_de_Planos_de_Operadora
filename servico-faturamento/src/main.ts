@@ -5,12 +5,17 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  const port = process.env.PORT;
+  if (!port) {
+    throw new Error('PORT environment variable is required')
+  }
+
   (BigInt.prototype as any).toJSON = function () {
     return this.toString();
   };
 
-  await app.listen(process.env.PORT ?? 3002);
-  console.log(`ServicoFaturamento rodando na porta ${process.env.PORT ?? 3002}`);
+  await app.listen(Number(port));
+  console.log(`ServicoFaturamento rodando na porta ${port}`);
 }
 
 bootstrap();

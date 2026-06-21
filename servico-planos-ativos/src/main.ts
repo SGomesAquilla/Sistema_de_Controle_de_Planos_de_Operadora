@@ -4,7 +4,8 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const port = process.env.PORT
+  
+  const port = process.env.PORT;
   if (!port) {
     throw new Error('PORT environment variable is required');
   }
