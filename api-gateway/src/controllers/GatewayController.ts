@@ -7,7 +7,7 @@ export class GatewayController {
     private readonly servicoGestaoUrl: string;
     private readonly servicoFaturamentoUrl: string;
     private readonly servicoPlanosAtivosUrl: string;
-    
+
     constructor(private readonly proxyService: ProxyService) {
         const gestaoUrl = process.env.SERVICO_GESTAO_URL;
         if (!gestaoUrl) {
@@ -29,7 +29,7 @@ export class GatewayController {
         this.servicoPlanosAtivosUrl = planosAtivosUrl;
     }
 
-    @All('gestao/*')
+    @All('gestao/*path')
     async roteandGestao(@Req() req: Request, @Res() res: Response) {
         await this.encaminhar(req, res, this.servicoGestaoUrl);
     }
@@ -39,7 +39,7 @@ export class GatewayController {
         await this.encaminhar(req, res, this.servicoFaturamentoUrl);
     }
 
-    @All('planosativos/*')
+    @All('planosativos/*path')
     async roteandoPlanosAtivos(@Req() req: Request, @Res() res: Response) {
         await this.encaminhar(req, res, this.servicoPlanosAtivosUrl);
     }
